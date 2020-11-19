@@ -8,7 +8,7 @@ $kerdes=$v1=$v2=$v3="";
 $jovalaszok=0;
 $helyes=$rossz=0;
 $megoldasId=$megoldas="";
-//asdsdfgdfhdfjhfgjbzdfgdfbhghnfgghdfxdfgvtfghfggfg
+
 $kerdess=[];
 $sql="SELECT id,kerdes,valasz1,valasz2,valasz3 from kerdesek";
 $stmt=$db->query($sql);
@@ -58,8 +58,6 @@ if(isset($_POST['kuldes'])){
             $valasz=strval($_POST[$i]);
         }
         
-        echo $valasz;
-        echo "<br>";
         $sql="SELECT megoldas from megoldasok where megoldas like '{$valasz}'";
         $stmt=$db->query($sql);
         if($stmt->rowCount()==1){
@@ -86,6 +84,7 @@ if(isset($_POST['kuldes'])){
     <link rel="stylesheet" href="bootstrap\bootstrap.min.css">
     <script src="bootstrap\jquery.min.js"></script>
     <script src="bootstrap\bootstrap.min.js"></script>
+    <script src="quiz.js"></script>
 
 </head>
 <style>
@@ -128,12 +127,12 @@ if(isset($_POST['kuldes'])){
             </div>
        
         <div class="row justify-content-center">
-            <input type="submit" value="Tovább" name="kuldes" class="btn btn-success">
+            <input type="submit" value="Kész" name="kuldes" id="kuldes" class="btn btn-success">
         </div>
          </form>
          <hr>
-         <div><?="A helyes válaszok száma: {$helyes}"?></div>
-         <div><?="A rossz válaszok száma: {$rossz}"?></div>
+         <div><span id="h" value="<?=$helyes?>"></span><?="A helyes válaszok száma: {$helyes}"?></div>
+         <div><span id="r" value="<?=$helyes?>"></span><?="A rossz válaszok száma: {$rossz}"?></div>
       </div>
     
     </div>

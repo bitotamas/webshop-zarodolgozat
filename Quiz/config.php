@@ -1,7 +1,7 @@
 <?php
 
 $host="localhost";
-$dbName="papirgyujtes";
+$dbName="quiz";
 $userName="root";
 $password="";
 $options=[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION];
