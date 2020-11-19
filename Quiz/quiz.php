@@ -8,7 +8,7 @@ $kerdes=$v1=$v2=$v3="";
 $jovalaszok=0;
 $helyes=$rossz=0;
 $megoldasId=$megoldas="";
-
+//asdsdfgdfhdfjhfgjbzdfgdfbhghnfgghdfxdfgvtfghfggfg
 $kerdess=[];
 $sql="SELECT id,kerdes,valasz1,valasz2,valasz3 from kerdesek";
 $stmt=$db->query($sql);
