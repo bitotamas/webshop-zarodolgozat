@@ -50,14 +50,22 @@ while($row=$stmt->fetch()){
 if(isset($_POST['kuldes'])){
     $h=[];
     $r=[];
-   
+$flag=true;
     for($i=1;$i<=$szamlalo;$i++){
-        if(is_string($_POST[$i])){
-           $valasz=$_POST[$i]; 
+        if(isset($_POST[$i])){
+           if(is_string($_POST[$i])){
+               $valasz=$_POST[$i];
+           }else{
+                $valasz=strval($_POST[$i]);
+           
+               
         }else{
-            $valasz=strval($_POST[$i]);
+            $flag=false;
+        }  
         }
-        
+
+   }
+   if($flag){     
         $sql="SELECT megoldas from megoldasok where megoldas like '{$valasz}'";
         $stmt=$db->query($sql);
         if($stmt->rowCount()==1){
@@ -66,11 +74,12 @@ if(isset($_POST['kuldes'])){
             $r[]="Rossz";
         }
 
-    }
+    
 
 
     $helyes=count($h);
     $rossz=count($r);
+   }
 }
 
 
@@ -89,7 +98,7 @@ if(isset($_POST['kuldes'])){
 </head>
 <style>
     body{
-        background-image: url("question-mark.jpg");
+       /* background-image: url("question-mark.jpg");*/
     }
     .container-fluid{
         max-width: 800px;
