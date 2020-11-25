@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "config.php";
 
 $radio="";
@@ -6,7 +7,7 @@ $h="";
 $id="";
 $kerdes=$v1=$v2=$v3="";
 $jovalaszok=0;
-$helyes=$rossz=0;
+$helyes=$rossz="";
 $megoldasId=$megoldas="";
 
 $kerdess=[];
@@ -52,19 +53,17 @@ if(isset($_POST['kuldes'])){
     $r=[];
 $flag=true;
     for($i=1;$i<=$szamlalo;$i++){
-        if(isset($_POST[$i])){
-           if(is_string($_POST[$i])){
+        if(isset($_POST[$i]))
+           if(is_string($_POST[$i]))
                $valasz=$_POST[$i];
-           }else{
-                $valasz=strval($_POST[$i]);
-           
-               
-        }else{
+           else
+                $valasz=strval($_POST[$i]);      
+        else
             $flag=false;
-        }  
-        }
+          
+        
 
-   }
+   
    if($flag){     
         $sql="SELECT megoldas from megoldasok where megoldas like '{$valasz}'";
         $stmt=$db->query($sql);
@@ -73,13 +72,15 @@ $flag=true;
         }else {
             $r[]="Rossz";
         }
-
-    
+    }
+    }
 
 
     $helyes=count($h);
     $rossz=count($r);
-   }
+    $_SESSION['helyes']=$helyes;
+    $_SESSION['rossz']=$rossz;
+    header("Location:kesz.php");
 }
 
 
@@ -93,7 +94,8 @@ $flag=true;
     <link rel="stylesheet" href="bootstrap\bootstrap.min.css">
     <script src="bootstrap\jquery.min.js"></script>
     <script src="bootstrap\bootstrap.min.js"></script>
-    <script src="quiz.js"></script>
+    <link rel="stylesheet" href="bg.css">
+    
 
 </head>
 <style>
@@ -136,12 +138,13 @@ $flag=true;
             </div>
        
         <div class="row justify-content-center">
-            <input type="submit" value="Kész" name="kuldes" id="kuldes" class="btn btn-success">
+            <input type="hidden" id="h" value="<?=$helyes?>">
+            <input type="hidden" id="r" value="<?=$rossz?>">
+            <input type="submit" value="Kész" name="kuldes" id="kuld" class="btn btn-success">
         </div>
          </form>
-         <hr>
-         <div><span id="h" value="<?=$helyes?>"></span><?="A helyes válaszok száma: {$helyes}"?></div>
-         <div><span id="r" value="<?=$helyes?>"></span><?="A rossz válaszok száma: {$rossz}"?></div>
+         
+         
       </div>
     
     </div>
