@@ -1,6 +1,7 @@
 <?php
 session_start();
-include "nav.php";  
+ 
+require_once "database/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +17,16 @@ include "nav.php";
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
-<body>  
+<body>
+<?php
+    include "nav.php";
+
+    
+        if(isset($_GET['page'])){
+            include $_GET['page'];
+        }else if(isset($_GET['categ'])){    
+                include "products.php";  
+        }else include "home.php";
+        ?>  
 </body>
 </html>

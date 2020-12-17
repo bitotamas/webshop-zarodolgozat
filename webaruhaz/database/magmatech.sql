@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2020. Dec 10. 12:04
+-- Létrehozás ideje: 2020. Dec 17. 12:30
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -30,32 +30,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `customers` (
   `id` int(11) NOT NULL,
-  `username` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
-  `password` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_hungarian_ci DEFAULT NULL,
   `email` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
   `phone` varchar(20) COLLATE utf8_hungarian_ci DEFAULT NULL,
   `address` varchar(100) COLLATE utf8_hungarian_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
-
---
--- A tábla adatainak kiíratása `customers`
---
-
-INSERT INTO `customers` (`id`, `username`, `password`, `email`, `phone`, `address`) VALUES
-(2, 'admin', '$2y$10$hhEj2.t/jEuVtjzdo.jzROeAGhF8Fm7x1/i.gCHdXs0DSLRNGbe36', 'admin@admin.admin', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Tábla szerkezet ehhez a táblához `items`
---
-
-CREATE TABLE `items` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
-  `price` int(100) NOT NULL,
-  `quanity` int(100) NOT NULL,
-  `picture` varchar(100) COLLATE utf8_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 -- --------------------------------------------------------
@@ -84,6 +63,32 @@ CREATE TABLE `order_items` (
   `quantity` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `category` varchar(11) COLLATE utf8_hungarian_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `price` int(100) NOT NULL,
+  `picture` varchar(100) COLLATE utf8_hungarian_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `products`
+--
+
+INSERT INTO `products` (`id`, `category`, `name`, `price`, `picture`) VALUES
+(1, 'psu', 'Corsair CX750M', 23000, '750w-psu.png'),
+(2, 'cpu', 'i5-9500', 54000, 'i5-9500.jpg'),
+(3, 'gpu', 'RTX 3090', 890000, 'rtx3090.jpg'),
+(4, 'memory', 'HyperX Fury 8GB DDR4', 18980, 'hyperx-fury-8gb.jpg'),
+(5, 'storage', 'WD Sata SSD 250gb', 10000, 'w-ssd.jpg'),
+(6, 'gpu', 'RX 5700 XT 8GB GDDR6', 179000, 'rx5700xt.jpg');
+
 --
 -- Indexek a kiírt táblákhoz
 --
@@ -92,12 +97,6 @@ CREATE TABLE `order_items` (
 -- A tábla indexei `customers`
 --
 ALTER TABLE `customers`
-  ADD PRIMARY KEY (`id`);
-
---
--- A tábla indexei `items`
---
-ALTER TABLE `items`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -116,6 +115,13 @@ ALTER TABLE `order_items`
   ADD KEY `product_id` (`product_id`);
 
 --
+-- A tábla indexei `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category` (`category`);
+
+--
 -- A kiírt táblák AUTO_INCREMENT értéke
 --
 
@@ -123,12 +129,6 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT a táblához `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT a táblához `items`
---
-ALTER TABLE `items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -142,6 +142,12 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `order_items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Megkötések a kiírt táblákhoz
@@ -158,7 +164,7 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `order_items`
   ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
-  ADD CONSTRAINT `order_items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `items` (`id`);
+  ADD CONSTRAINT `order_items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
