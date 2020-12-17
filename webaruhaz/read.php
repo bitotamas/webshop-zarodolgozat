@@ -2,9 +2,20 @@
 require_once "database/config.php";
 
 include "product.class.php";
-
+$hTag="";
 $product=new Product($db);
 if(isset($_GET['categ'])){
+    if($_GET['categ']=="cpu"){
+        $hTag="<h1>Processzorok</h1>";
+        }else if($_GET['categ']=="gpu"){
+            $hTag="<h1>Videókártyák</h1>";
+            }else if($_GET['categ']=="memory"){
+                $hTag="<h1>Memóriák</h1>";
+                }else if($_GET['categ']=="storage"){
+                    $hTag="<h1>Háttértárak</h1>";
+                    }else if($_GET['categ']=="psu"){
+                        $hTag="<h1>Tápegységek</h1>";
+                        }
     $stmt=$product->filteredRead($_GET['categ']);
 }else {
 $stmt=$product->readRandom();
