@@ -51,6 +51,7 @@ if(isset($_SESSION['cart_contents'])){
         </tr></tfoot>
         </table>
     </div>
+    <div><a href="index.php">continue shopping...</a><a href="index.php?page=checkout.php">Checkout</a></div>
     
 </div>
 <script src="cart.js"></script>
