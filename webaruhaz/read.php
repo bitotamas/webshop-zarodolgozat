@@ -27,7 +27,7 @@ if($nr>0){
 while($row=$stmt->fetch()){
     extract($row);
     //$strTable.="<tr><td>{$name}</td><td><img src='images/{$picture}'></td><td>{$price}</td><td><a href='index.php?page=cart.php&id={$id}'>Add to cart</a></td></tr>";
-    $divProducts.="
+    /*$divProducts.="
     <div class='border border-danger rounded'>
 
     <div class='row justify-content-center m-4'>
@@ -46,7 +46,24 @@ while($row=$stmt->fetch()){
         <a href='index.php?page=cart.php&id={$id}' class='btn btn-success'>Add to cart</a>
     </div>
 
-    </div>";
+    </div>";*/
+    $divProducts.="
+    <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
+        <div class='card h-100 justify-content-center text-center '>
+            
+                <img id='cartImg' src='images/{$picture}' class='card-img-top'>
+            
+            <div class='card-body border'>
+                <h4 class='card-title'>{$name}</h4>
+                <hr>
+                <h5 class='card-title'>Listaár: {$price} Ft</h5>
+            </div>
+            <div class='card'>
+                <a href='index.php?page=cart.php&id={$id}' class='btn btn-success'>Add to cart</a>
+            </div>
+        </div>
+    </div>
+    ";
 }
 }
 

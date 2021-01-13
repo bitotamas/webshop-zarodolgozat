@@ -9,5 +9,9 @@ h1{
 </style>
 <div class="container justify-content-center text-center">
         <?=$hTag?>
-        <?=$divProducts?>
+
+        <div class="row">
+                <?=$divProducts?>
+        </div>
+        
 </div>

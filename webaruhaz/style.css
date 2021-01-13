@@ -1,9 +1,5 @@
-
 .bs-example{
     margin: 20px;
-}
-body{
-    padding-top: 70px;
 }
 #menuButtons{
     font-weight: bold;
@@ -12,10 +8,11 @@ body{
 .nav{
     margin-bottom: 30px;
 }
+
 #cart{
-    margin-right: 30px;
-    max-width: 50px;
+    max-width: 60px;
 }
+
 #search{
     max-width: 30px;
 }
@@ -32,4 +29,9 @@ body{
 a{
     color: black;
 }
+#cartImg{
+    width: 100%;
+    
+}
+
 

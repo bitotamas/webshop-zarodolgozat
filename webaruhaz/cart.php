@@ -1,13 +1,13 @@
 <?php
 include "cart.class.php";
 
-print_r($_SESSION);
+//print_r($_SESSION);
 
 $cart=new Cart();
 
 $sum=0;
 $strCart="";
-print_r($_GET);
+//print_r($_GET);
 /////////////////////////////////////
 if(isset($_GET['id'])){
 
@@ -16,7 +16,7 @@ $row=$query->fetch();
 extract($row);
 
 $item_data=array('id'=>$id,'name'=>$name,'price'=>$price,'quantity'=>1);
-print_r($item_data);
+//print_r($item_data);
 $insert_item=$cart->insert($item_data);
 header("Location:index.php?page=cart.php");
 }

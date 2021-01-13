@@ -27,6 +27,9 @@ require_once "database/config.php";
         }else if(isset($_GET['categ'])){    
                 include "products.php";  
         }else include "home.php";
-        ?>  
+
+    include "footer.php";
+        ?>
+  
 </body>
 </html>
