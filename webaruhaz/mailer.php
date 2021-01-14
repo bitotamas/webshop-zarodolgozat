@@ -14,9 +14,9 @@ require $dir.'\PHPMailer.php';
 
 require $dir.'\SMTP.php';
 
-$emailFrom="emailkuldesteszt@gmail.com";
+$emailFrom="mtwebaruhaz@gmail.com";
 
-$PASS="ASD123asd";
+$PASS="90810717QwErTzU";
 
 $email=$emailCustomer;//ahová küldeni szeretnénk
 
@@ -49,9 +49,9 @@ try {
     
     //Recipients
     
-    $mail->setFrom($emailFrom, 'Localhost');
+    $mail->setFrom($emailFrom,'MagmaTech Számítástechnikai Webáruház');
     
-    $mail->addAddress($email,'Localhost'); // Add a recipient
+    $mail->addAddress($email,'MagmaTech Számítástechnikai Webáruház'); // Add a recipient
     
     //Content
     
@@ -59,7 +59,7 @@ try {
     
     //$mail->Subject = 'megrendelés igazolása';
     
-    $sub = '=?UTF-8?B?'.base64_encode('megrendelés igazolása').'?=';
+    $sub = '=?UTF-8?B?'.base64_encode('Adatok a rendeléséről - MagmaTech').'?=';
     
     $mail->Subject = $sub;
     

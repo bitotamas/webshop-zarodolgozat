@@ -3,7 +3,7 @@
 $cartDetails="";
 $cartDetailsEmail="";
 $sum=0;
-
+$orderIdMail="";
 if(isset($_SESSION['cart_contents'])){
     $total=0;
     foreach($_SESSION['cart_contents'] as $key=>$arr){
@@ -89,7 +89,7 @@ if(isset($_POST['button'])){
             if($stmt){
             unset($_SESSION['cart_contents']);
             $emailCustomer=$email;
-
+            $orderIdMail=$order_id;
             $cartDetailsEmail.="
             <p>Végösszeg: {$sum}</p>
             ";
