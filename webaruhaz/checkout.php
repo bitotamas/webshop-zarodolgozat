@@ -1,6 +1,7 @@
 <?php
 
 $cartDetails="";
+$cartDetailsEmail="";
 $sum=0;
 
 if(isset($_SESSION['cart_contents'])){
@@ -51,8 +52,18 @@ if(isset($_POST['button'])){
         $date=date("Y-m-d");
         $sql="INSERT into orders values(null,{$customer_id},{$sum},'{$date}')";
         $stmt=$db->exec($sql);
+
         if($stmt){
             echo "sikeres az orders táblába írás";
+
+
+            $cartDetailsEmail.="
+                <h1>Megrendelő adatai</h1>
+                <p>Név: {$_POST['name']}</p>
+                <p>Telefon: {$_POST['phone']}</p>
+                <p>Cím: {$_POST['address']}</p>
+                <h1>Rendelés termékei</h1>";
+
 
             $sql="SELECT MAX(id)as 'id' from orders";
             $stmt=$db->query($sql);
@@ -63,11 +74,26 @@ if(isset($_POST['button'])){
             foreach($_SESSION['cart_contents'] as $key=>$arr){
                 extract($arr);
                 $sql.="INSERT into order_items values(null,{$order_id},{$id},{$quantity});";
+
+                $cartDetailsEmail.="
+                <hr>
+                <p>{$name}</p>
+                <p>{$price}</p>
+                <p>{$quantity}</p>
+                <hr>
+                ";
+
+
             }
             $stmt=$db->exec($sql);
             if($stmt){
             unset($_SESSION['cart_contents']);
             $emailCustomer=$email;
+
+            $cartDetailsEmail.="
+            <p>Végösszeg: {$sum}</p>
+            ";
+
             include "mailer.php";
             
             header("Location:index.php?page=order_success.php&order_id=".$order_id);

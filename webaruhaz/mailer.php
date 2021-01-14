@@ -20,7 +20,7 @@ $PASS="ASD123asd";
 
 $email=$emailCustomer;//ahová küldeni szeretnénk
 
-$body="<p>A rendelés adatai</p><p>".$cartDetails;
+$body=$cartDetailsEmail;
 
 $body.= "</p><p><a href=\"localhost/SelfProjects/webaruhaz/index.php"."\">Vissza a webshop oldalára</a><p>";
 

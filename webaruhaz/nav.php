@@ -1,6 +1,11 @@
+<style>
+.border-btm{
+    border-bottom: solid 2px black;
+}
+</style>
 <header>
 <div>
-<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+<nav class="navbar navbar-expand-lg navbar-light bg-danger border-btm">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navItems" aria-controls="navItems" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -28,11 +33,19 @@
             <li class="nav-item">
                 <a href="index.php?categ=psu" id="menuButtons" class="nav-item nav-link  text-dark rounded m-2">Tápegységek</a>
             </li>
+            <!-- BEJELENTKEZÉS ÉS REGISZTRÁCIÓ -->
+            <li class="nav-item">
+                <a href="index.php?page=login.php" id="menuButtons" class="nav-item nav-link  bg-info text-white rounded m-2">Bejelentkezés</a>
+            </li>
+            <li class="nav-item">
+                <a href="index.php?page=register" id="menuButtons" class="nav-item nav-link  bg-warning text-dark rounded m-2">Regisztráció</a>
+            </li>
+            <!-------------------------------------->
           </ul>
         </div>
         
         </div>
-        <a href="index.php?page=cart.php" class="navbar-brand rounded"><img id="cart" class="bordered rounded-circle" src="images/shopping-cart.png" alt=""></a>
+        <a href="index.php?page=cart.php" class="navbar-brand rounded nav-item"><img id="cart" class="bordered rounded-circle" src="images/shopping-cart.png" alt=""></a>
         
     </div>       
 </nav>
