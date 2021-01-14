@@ -35,16 +35,17 @@
             </li>
             <!-- BEJELENTKEZÉS ÉS REGISZTRÁCIÓ -->
             <li class="nav-item">
-                <a href="index.php?page=login.php" id="menuButtons" class="nav-item nav-link  bg-info text-white rounded m-2">Bejelentkezés</a>
+                <a href="index.php?page=login.php" id="menuButtons" class="nav-item nav-link bg-info text-white rounded m-2 text-center nav-right">Bejelentkezés</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?page=register" id="menuButtons" class="nav-item nav-link  bg-warning text-dark rounded m-2">Regisztráció</a>
+                <a href="index.php?page=register" id="menuButtons" class="nav-item nav-link navbar-right bg-warning text-dark rounded m-2 text-center">Regisztráció</a>
             </li>
             <!-------------------------------------->
           </ul>
         </div>
         
         </div>
+        
         <a href="index.php?page=cart.php" class="navbar-brand rounded nav-item"><img id="cart" class="bordered rounded-circle" src="images/shopping-cart.png" alt=""></a>
         
     </div>       
