@@ -48,8 +48,8 @@ while($row=$stmt->fetch()){
 
     </div>";*/
     $divProducts.="
-    <div class='col-12 col-sm-12 col-md-6 col-lg-4'>
-        <div class='card h-100 justify-content-center text-center '>
+    <div class='col-12 col-sm-12 col-md-6 col-lg-3'>
+        <div class='card h-100 justify-content-center text-center border border-danger'>
             
                 <img id='cartImg' src='images/{$picture}' class='card-img-top'>
             
