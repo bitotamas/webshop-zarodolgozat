@@ -36,7 +36,7 @@ table,tr,td,th,thead{
   </a>
 </div>
 <div class="container justify-content-center m-auto">
-      <div class="jumbotron text-center"><h1>Ajánlatok</h1></div>
+      <div class="jumbotron text-center bg-danger rounded"><h1>Ajánlatok</h1></div>
        <div class="row">
         <?=$divProducts?>
        </div>

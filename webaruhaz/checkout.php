@@ -9,7 +9,30 @@ if(isset($_SESSION['cart_contents'])){
         extract($arr);
         $total=intval($quantity*$price);
         $sum+=$total;
-        $cartDetails.="<tr><td>{$name}</td><td>{$quantity}</td><td>{$price}</td><td>{$total}</td></tr>";
+        $cartDetails.="
+    <div class='row'>
+
+            <div class='col-12 col-sm-12 col-md-2 text-center'>
+                <img class='img-responsive' src='images/{$picture}' alt='prewiew' width='120' height='80'>
+            </div>
+        <div class='col-12 text-sm-center col-sm-12 text-md-left col-md-6'>
+            <h4 class='product-name'><strong>{$name}</strong></h4>
+            <h4>
+                <small>Product description</small>
+            </h4>
+        </div>
+        <div class='col-12 col-sm-12 text-sm-center col-md-4 text-md-right row'>
+            <div class='col-3 col-sm-3 col-md-7 text-md-right' style='padding-top: 5px'>
+                <h6><strong>Listaár: {$price} Ft</strong></h6>
+            </div>
+                <div class='col-3 col-sm-3 col-md-7 text-md-right'>
+                    <div class='quantity'>
+                    <h6><strong>Darabszám: {$quantity} db</strong></h6>
+                    </div>
+                </div>
+            </div>
+            
+    </div>";
     
     }
 }else header('Location:index.php');
@@ -54,38 +77,23 @@ if(isset($_POST['button'])){
 
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <script src="bootstrap/jquery.min.js"></script>
-    <script src="bootstrap/bootstrap.min.js"></script>
-</head>
-<body>
-<div class="container">
-    <div class="jumbotron m-5">
-        <div class="row">
-            <div class="col-6">
-                <table class="table-bordered">
-            
-                    <thead>
-                        <th>Item name</th><th>Quantity</th><th>Price</th><th>Total</th>
-                    </thead>
-                    <tbody id="table">
-                        <?=$cartDetails?>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3">Sum</td>
-                            <td><?=$sum?></td>
-                        </tr>
-                    </tfoot>
-                    </table>
+
+<div class='container'>
+    <div class="text-center bg-info"><h1>Kosár adatai</h1></div>
+            <div class='card shopping-cart'>
+                <div class='card-body'>   
+                    <?=$cartDetails?>      
+                </div>
+                <div class='card-body text-center'>
+                    <h6><strong>Végösszeg: <?=$sum?> Ft</strong></h6>
+                </div>
             </div>
-            <div class="col-6">
+        </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron m-5 ">
+            <div class="col-12">
                 <form method="post">
                     <h2>Contact details</h2>
                     <div class="form-group">
@@ -108,5 +116,3 @@ if(isset($_POST['button'])){
         </div>
     </div>
 </div>    
-</body>
-</html>
