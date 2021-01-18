@@ -6,6 +6,7 @@ include_once "read.php";
 <div class="container justify-content-center text-center ">
         
         <div class="text-center bg-danger rounded"><?=$hTag?></div>
+        <div class="text-center"><h4>Találatok száma: <?=$talalatokSzama?></h4></div>
        
         <div class="row">
                 <?=$divProducts?>

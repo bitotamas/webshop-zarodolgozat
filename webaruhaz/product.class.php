@@ -32,5 +32,6 @@ class Product{
         $stmt=$this->conn->query($sql);
         return $stmt;
     }
+    
 }
 ?>

@@ -3,6 +3,7 @@ require_once "database/config.php";
 
 include "product.class.php";
 $hTag="";
+$talalatokSzama="";
 $product=new Product($db);
 if(isset($_GET['categ'])){
     if($_GET['categ']=="cpu"){
@@ -17,10 +18,12 @@ if(isset($_GET['categ'])){
                         $hTag="<h1>Tápegységek</h1>";
                         }
     $stmt=$product->filteredRead($_GET['categ']);
+
 }else {
 $stmt=$product->readRandom();
 }
 $nr=$stmt->rowCount();
+$talalatokSzama=$stmt->rowCount();
 //echo $nr;
 $divProducts="";
 if($nr>0){
