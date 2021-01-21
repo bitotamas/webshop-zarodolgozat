@@ -1,5 +1,12 @@
 <?php
 
+if(!isset($_SESSION["email"])){
+    
+    header("Location:index.php?page=login.php");
+    
+}
+
+
 $cartDetails="";
 $cartDetailsEmail="";
 $sum=0;

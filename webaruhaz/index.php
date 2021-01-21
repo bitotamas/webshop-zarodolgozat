@@ -1,7 +1,7 @@
 <?php
 session_start();
- 
 require_once "database/config.php";
+print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,16 +20,12 @@ require_once "database/config.php";
 <body>
 <?php
     include "nav.php";
-
-    
         if(isset($_GET['page'])){
             include $_GET['page'];
         }else if(isset($_GET['categ'])){    
                 include "products.php";  
         }else include "home.php";
-
     include "footer.php";
-        ?>
-  
+        ?> 
 </body>
 </html>

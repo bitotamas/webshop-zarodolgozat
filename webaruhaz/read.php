@@ -54,11 +54,14 @@ while($row=$stmt->fetch()){
     <div class='col-12 col-sm-12 col-md-6 col-lg-3 mb-3'>
         <div class='card h-100 justify-content-center text-center border border-dark'>
             
-                <img id='cartImg' src='images/{$picture}' class='card-img-top'>
+                <img id='cartImg' src='images/{$picture}' class='card-img-top mt-5'>
             
             <div class='card-body border'>
                 <h4 class='card-title'>{$name}</h4>
                 <hr>
+                
+            </div>
+            <div class='card'>
                 <h5 class='card-title'>Listaár: {$price} Ft</h5>
             </div>
             <div class='card'>

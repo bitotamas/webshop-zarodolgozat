@@ -1,3 +1,40 @@
+<?php
+$logReg="";
+
+
+if(isset($_SESSION['email'])){
+
+     $logReg="
+    <li class='nav-item'>
+    <a href='index.php?page=logOut.php' id='menuButtons' class='nav-item nav-link bg-info text-white rounded m-2 text-center nav-right'>Kijelentkezés</a>
+    </li>
+    <li class='nav-item'>
+        <span class='nav-item nav-link  text-dark rounded m-2'>Bejelentkezve: {$_SESSION['name']}</span>
+    </li>
+
+    ";
+
+    if($_SESSION['permission']==1){
+      $logReg.="
+    <li class='nav-item'>
+        <a href='index.php?page=admin.php' id='menuButtons' class='nav-item nav-link bg-white text-dark rounded m-2 text-center nav-right'>Admin felület</a>
+    </li>
+      ";
+    }
+}else{
+    $logReg="
+    <li class='nav-item'>
+                <a href='index.php?page=login.php' id='menuButtons' class='nav-item nav-link bg-info text-white rounded m-2 text-center nav-right'>Bejelentkezés</a>
+            </li>
+            <li class='nav-item'>
+                <a href='index.php?page=register.php' id='menuButtons' class='nav-item nav-link navbar-right bg-warning text-dark rounded m-2 text-center'>Regisztráció</a>
+    </li>
+    ";
+}
+
+
+?>
+
 <style>
 .border-btm{
     border-bottom: solid 2px black;
@@ -34,12 +71,7 @@
                 <a href="index.php?categ=psu" id="menuButtons" class="nav-item nav-link  text-dark rounded m-2">Tápegységek</a>
             </li>
             <!-- BEJELENTKEZÉS ÉS REGISZTRÁCIÓ -->
-            <li class="nav-item">
-                <a href="index.php?page=login.php" id="menuButtons" class="nav-item nav-link bg-info text-white rounded m-2 text-center nav-right">Bejelentkezés</a>
-            </li>
-            <li class="nav-item">
-                <a href="index.php?page=register" id="menuButtons" class="nav-item nav-link navbar-right bg-warning text-dark rounded m-2 text-center">Regisztráció</a>
-            </li>
+            <?=$logReg?>
             <!-------------------------------------->
           </ul>
         </div>
