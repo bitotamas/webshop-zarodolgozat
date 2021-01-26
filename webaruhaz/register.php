@@ -14,7 +14,7 @@ if(isset($_POST['mentes'])){
 	}else{
 		
 			$pw=password_hash($password,PASSWORD_DEFAULT); 
-			$sql="insert into customers values (null,'{$nev}','{$pw}','{$email}','{$phone}')";
+			$sql="insert into customers values (null,'0','{$nev}','{$pw}','{$email}','{$phone}')";
 			echo $sql;
 			$stmt=$db->exec($sql);
 			if($stmt){
