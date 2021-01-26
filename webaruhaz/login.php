@@ -3,7 +3,7 @@ $msg=isset($_SESSION['msg'])?$_SESSION['msg']:'';
 
 if(isset($_POST['be'])){
     extract($_POST);
-    $sql="select name,password,permission from customers where email='{$email}'";
+    $sql="select id,name,password,permission from customers where email='{$email}'";
     $stmt=$db->query($sql);
     echo $stmt->rowCount();
     if(  $stmt->rowCount()>0){//létezik a felhasználó
@@ -12,6 +12,7 @@ if(isset($_POST['be'])){
             $_SESSION['email'] = $email;
             $_SESSION['permission']=$row['permission'];
             $_SESSION['name']=$row['name'];
+            $_SESSION['id']=$row['id'];
             //echo "ok";
             header('Location: index.php?page=home.php');
         }else

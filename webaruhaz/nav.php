@@ -6,7 +6,7 @@ if(isset($_SESSION['email'])){
 
      $logReg="
     <li class='nav-item'>
-    <a href='index.php?page=logOut.php' id='menuButtons' class='nav-item nav-link bg-info text-white rounded m-2 text-center nav-right'>Kijelentkezés</a>
+    <a href='index.php?page=logout.php' id='menuButtons' class='nav-item nav-link bg-info text-white rounded m-2 text-center nav-right'>Kijelentkezés</a>
     </li>
     <li class='nav-item'>
         <span class='nav-item nav-link  text-dark rounded m-2'>Bejelentkezve: {$_SESSION['name']}</span>

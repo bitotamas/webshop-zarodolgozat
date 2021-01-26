@@ -59,9 +59,6 @@ if(isset($_POST['mentes'])){
 			<input type="text" class="form-control" name="phone" placeholder="Telefonszám" required>
 		 </div>	  
 		<div>
-		<div class="form-group">
-			<textarea class="form-control" name="address" rows="3" placeholder="Szállítási cím" required></textarea>
-		</div>
 		</div>
         <div class="form-group">
 			<label class="checkbox-inline"><input type="checkbox" required> Elfogadom az <a href="#">adatkezelési feltáteleket</a></label>

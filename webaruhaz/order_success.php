@@ -1,6 +1,6 @@
 <?php
 $id=$_GET['order_id'];
-$orderinfo="SELECT orders.id,orders.total,orders.status,customers.name,customers.email,customers.phone from orders inner join customers on customers.id=orders.customer_id where orders.id={$id}";
+$orderinfo="SELECT orders.id,orders.total,orders.status,customers.name,customers.email,customers.phone,orders.address from orders inner join customers on customers.id=orders.customer_id where orders.id={$id}";
 $stmt=$db->query($orderinfo);
 $row=$stmt->fetch();
 extract($row);
@@ -40,7 +40,7 @@ while($row=$stmt->fetch()){
 ?>
     
     <div class='container'>
-    <div class="text-center bg-info"><h1>Rendelő adatai</h1></div>
+    <div class="text-center bg-info"><h1>Rendelés adatai</h1></div>
             <div class='card shopping-cart'>
                 <div class='card-body text-center'>
                     <div>Vásárlói azonosító: <?=$id?></div>
@@ -48,6 +48,7 @@ while($row=$stmt->fetch()){
                     <div>Vevő neve: <?=$rendelo?></div>
                     <div>Email címe: <?=$email?></div>
                     <div>Telefonszáma: <?=$phone?></div>
+                    <div>Szállítási cím: <?=$address?></div>
                 </div>
                 <div class="text-center bg-info"><h1>Termékek adatai</h1></div>
                 <div class='card-body'>   

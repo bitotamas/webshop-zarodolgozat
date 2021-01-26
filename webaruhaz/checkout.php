@@ -11,7 +11,20 @@ $cartDetails="";
 $cartDetailsEmail="";
 $sum=0;
 $orderIdMail="";
+$getName="";
+$getEmail="";
+$getPhone="";
 if(isset($_SESSION['cart_contents'])){
+
+    $sql="SELECT name,email,phone from customers where id={$_SESSION['id']}";
+    $stmt=$db->query($sql);
+    $row=$stmt->fetch();
+    $getName=$row['name'];
+    $getEmail=$row['email'];
+    $getPhone=$row['phone'];
+
+
+
     $total=0;
     foreach($_SESSION['cart_contents'] as $key=>$arr){
         extract($arr);
@@ -43,21 +56,14 @@ if(isset($_SESSION['cart_contents'])){
     </div>";
     
     }
-}else header('Location:index.php');
+}else header('Location:index.php?page=home.php');
 
 if(isset($_POST['button'])){
     extract($_POST);
-
-    $sql="INSERT into customers values(null,'{$name}',null,'{$email}','{$phone}','{$address}')";
-    $stmt=$db->exec($sql);
-    if($stmt){
-        echo "sikeres adatbeírás";
-        $sql="SELECT MAX(id)as 'id' from customers";
-        $stmt=$db->query($sql);
-        $row=$stmt->fetch();
-        $customer_id=$row['id'];
+        $address=$_POST["isz"]." ".$_POST["city"]." ".$_POST["street"]." ".$_POST["streetNumber"].".";
+        $customer_id=$_SESSION['id'];
         $date=date("Y-m-d");
-        $sql="INSERT into orders values(null,{$customer_id},{$sum},'{$date}')";
+        $sql="INSERT into orders values(null,{$customer_id},{$sum},'{$date}','{$address}')";
         $stmt=$db->exec($sql);
 
         if($stmt){
@@ -66,9 +72,9 @@ if(isset($_POST['button'])){
 
             $cartDetailsEmail.="
                 <h1>Megrendelő adatai</h1>
-                <p>Név: {$_POST['name']}</p>
-                <p>Telefon: {$_POST['phone']}</p>
-                <p>Cím: {$_POST['address']}</p>
+                <p>Név: {$getName}</p>
+                <p>Telefon: {$getPhone}</p>
+                <p>Cím: {$address}</p>
                 <h1>Rendelés termékei</h1>";
 
 
@@ -106,7 +112,7 @@ if(isset($_POST['button'])){
             header("Location:index.php?page=order_success.php&order_id=".$order_id);
             }
         }
-    }
+    
 
 }
 ?>
@@ -128,18 +134,23 @@ if(isset($_POST['button'])){
     <div class="jumbotron m-5 ">
             <div class="col-12">
                 <form method="post">
-                    <h2>Contact details</h2>
+                    <h2>Az Ön adatai</h2>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="name" id="" placeholder="Name" value="" required>
+                        <input class="form-control" type="text" name="name" id="" placeholder="Name" value="<?=$getName?>" readonly>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="email" id="" placeholder="Email" value="" required>
+                        <input class="form-control" type="text" name="email" id="" placeholder="Email" value="<?=$getEmail?>" readonly>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="phone" id="" placeholder="Phone" value="" required>
+                        <input class="form-control" type="text" name="phone" id="" placeholder="Phone" value="<?=$getPhone?>" readonly>
                     </div>
+                
+                    <h2>Szállítási adatok</h2>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="address" id="" placeholder="Address" value="" required>
+                        <input class="form-control" type="number" name="isz" id="" placeholder="Irányító szám" value="" required>
+                        <input class="form-control" type="text" name="city" id="" placeholder="Város" value="" required>
+                        <input class="form-control" type="text" name="street" id="" placeholder="Utca" value="" required>
+                        <input class="form-control" type="number" name="streetNumber" id="" placeholder="Házszám" value="" required>
                     </div>
                     <div class="form-group">
                         <input class="form-group btn btn-success btn btn-block" type="submit" name="button" id="" value="Place order">
