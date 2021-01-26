@@ -109,7 +109,7 @@ if(isset($_POST['button'])){
 
             include "mailer.php";
             
-            header("Location:index.php?page=order_success.php&order_id=".$order_id);
+            header("Location:index.php?page=cart/order_success.php&order_id=".$order_id);
             }
         }
     

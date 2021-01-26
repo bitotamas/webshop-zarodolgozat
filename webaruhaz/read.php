@@ -1,5 +1,4 @@
 <?php
-require_once "database/config.php";
 
 include "product.class.php";
 $hTag="";
@@ -65,7 +64,7 @@ while($row=$stmt->fetch()){
                 <h5 class='card-title'>Listaár: {$price} Ft</h5>
             </div>
             <div class='card'>
-                <a href='index.php?page=cart.php&id={$id}' class='btn btn-success'>Add to cart</a>
+                <a href='index.php?page=cart\cart.php&id={$id}' class='btn btn-success'>Add to cart</a>
             </div>
         </div>
     </div>

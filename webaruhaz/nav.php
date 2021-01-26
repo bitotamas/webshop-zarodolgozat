@@ -78,7 +78,7 @@ if(isset($_SESSION['email'])){
         
         </div>
         
-        <a href="index.php?page=cart.php" class="navbar-brand rounded nav-item"><img id="cart" class="bordered rounded-circle" src="images/shopping-cart.png" alt=""></a>
+        <a href="index.php?page=cart/cart.php" class="navbar-brand rounded nav-item"><img id="cart" class="bordered rounded-circle" src="images/shopping-cart.png" alt=""></a>
         
     </div>       
 </nav>

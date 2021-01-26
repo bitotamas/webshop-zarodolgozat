@@ -8,6 +8,6 @@ $cart = new Cart;
 //print_r($cart);
 $deleteItem = $cart->remove($_GET['id']);
 // Redirect to cart page 
-header('Location:index.php?page=cart.php');
+header('Location:index.php?page=cart/cart.php');
 
 ?>

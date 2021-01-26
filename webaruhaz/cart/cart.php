@@ -18,7 +18,7 @@ extract($row);
 $item_data=array('id'=>$id,'picture'=>$picture,'name'=>$name,'price'=>$price,'quantity'=>1);
 //print_r($item_data);
 $insert_item=$cart->insert($item_data);
-header("Location:index.php?page=cart.php");
+header("Location:index.php?page=cart/cart.php");
 }
 /////////////////////////////////////
 
@@ -53,7 +53,7 @@ if(isset($_SESSION['cart_contents'])){
                 </div>
             </div>
             <div class='col-2 col-sm-2 col-md-2 text-right'>
-                <a href='index.php?page=delete.php&id={$id}' class='btn btn-outline-danger btn-xs'><i class='fa fa-trash' aria-hidden='true'></i></a>
+                <a href='index.php?page=cart/delete.php&id={$id}' class='btn btn-outline-danger btn-xs'><i class='fa fa-trash' aria-hidden='true'></i></a>
             </div>
         </div>
     </div>
@@ -109,7 +109,7 @@ if(isset($_SESSION['cart_contents'])){
                     </div>
                 </div>
                 <div class='pull-right' style='margin: 10px'>
-                    <a href='index.php?page=checkout.php' class='btn btn-success pull-right'>Checkout</a>
+                    <a href='index.php?page=cart/checkout.php' class='btn btn-success pull-right'>Checkout</a>
                     <div class='pull-right' style='margin: 5px'>
                         Total price: <b><?=$sum==0? "" :$sum?> Ft</b>
                     </div>
@@ -118,4 +118,4 @@ if(isset($_SESSION['cart_contents'])){
         </div>
 </div>
 <div class="m-5"></div>
-<script src="cart.js"></script>
+<script src="cart/cart.js"></script>
