@@ -1,6 +1,6 @@
 ﻿<?php
 $nev=$msg=$email=$fnev="";  
-print_r($_POST);
+//print_r($_POST);
 if(isset($_POST['mentes'])){
 	extract($_POST);
 	//ellenőrizzük hogy ne legyen ilyen email es felhasznalonev mar az adatbázisban:
@@ -33,15 +33,15 @@ if(isset($_POST['mentes'])){
 <div class="container">
   <div class="row justify-content-md-center p-5">
     <form class="col-4 border" action="" method="post" enctype="multipart/form-data">
-		<h2 class="text-center" >Regisztráció</h2>
+		<h2 class="text-center bg-danger p-3 rounded">Regisztráció</h2>
 
-		<div class="alert alert-success " id="msg"><?=$msg?></div>	
+		<!--<div class="alert alert-success " id="msg"><?=$msg?></div>-->	
 		
 	    <div class="form-group">
-				<input type="text" class="form-control" name="nev" placeholder="név" required value="<?=$nev?>">
+				<input type="text" class="form-control" name="nev" placeholder="Név" required value="<?=$nev?>">
         </div>
         <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required value="<?=$email?>">
+        	<input type="email" class="form-control" name="email" placeholder="E-mail cím" required value="<?=$email?>">
         </div>
 		
 		<!--disable autocomplete input text in login form-->
@@ -49,10 +49,10 @@ if(isset($_POST['mentes'])){
 		<input type="password" style="display:none">
 		
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" id="jelszo" placeholder="jelszó" required >
+            <input type="password" class="form-control" name="password" id="Jelszó" placeholder="jelszó" required >
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="conf_password" id="conf_jelszo" placeholder="jelszó megerősítés" required>
+            <input type="password" class="form-control" name="conf_password" id="conf_jelszo" placeholder="Jelszó újra" required>
         </div>  
 
 		<div class="form-group">
@@ -61,11 +61,11 @@ if(isset($_POST['mentes'])){
 		<div>
 		</div>
         <div class="form-group">
-			<label class="checkbox-inline"><input type="checkbox" required> Elfogadom az <a href="#">adatkezelési feltáteleket</a></label>
+			<label class="checkbox-inline"><input type="checkbox" required> Elfogadom az <a href="#">adatkezelési feltételeket</a></label>
 		</div>
 		
 		<div class="form-group">
-            <input type="submit" class="btn btn-success btn-lg btn-block" name="mentes" id="mentes" value="Mentés">
+            <input type="submit" class="btn btn-success btn-lg btn-block" name="mentes" id="mentes" value="Regisztráció">
         </div>
 	</form>
   </div>

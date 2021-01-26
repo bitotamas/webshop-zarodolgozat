@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "database/config.php";
-print_r($_SESSION);
+//print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
