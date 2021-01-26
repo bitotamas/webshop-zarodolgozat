@@ -17,7 +17,7 @@ if(isset($_SESSION['email'])){
     if($_SESSION['permission']==1){
       $logReg.="
     <li class='nav-item'>
-        <a href='index.php?page=admin.php' id='menuButtons' class='nav-item nav-link bg-white text-dark rounded m-2 text-center nav-right'>Admin felület</a>
+        <a href='index.php?page=admin/adminMenu.php' id='menuButtons' class='nav-item nav-link bg-white text-dark rounded m-2 text-center nav-right'>Admin felület</a>
     </li>
       ";
     }

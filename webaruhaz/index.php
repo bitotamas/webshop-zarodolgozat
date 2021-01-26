@@ -20,11 +20,13 @@ require_once "database/config.php";
 <body>
 <?php
     include "nav.php";
+    
         if(isset($_GET['page'])){
             include $_GET['page'];
         }else if(isset($_GET['categ'])){    
                 include "products.php";  
         }else include "home.php";
+
     include "footer.php";
         ?> 
 </body>

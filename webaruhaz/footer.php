@@ -1,4 +1,5 @@
-<footer class="py-4 bg-danger text-white">
+<div class="footer">
+<footer class="p-4 bg-danger text-white">
         <div class="text-center">
         <a href="#top" class="btn-info rounded">Vissza a lap tetejére</a><br>
             <small>
@@ -11,3 +12,4 @@
 
         </div>
 </footer>
+</div>
