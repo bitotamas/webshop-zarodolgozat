@@ -43,6 +43,7 @@ if(isset($_POST['be'])){
         <div class="form-group">
             <button type="submit" name="be" class="btn btn-success btn-block">Bejelentkezés </button>
         </div>
+        <h5 class="text-center mt-2 mb-4 p-2 rounded">Ha még nem regisztráltál..</h5>
         <a href="LogReg/register.php" class="btn btn-warning btn-block">Regisztráció...</a>
     </form>
     

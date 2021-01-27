@@ -40,7 +40,7 @@ class Cart{
     }
 
     public function updateQty($id,$qty){
-            
+            echo "updateqty-be vagyunk";
         foreach($this->cart_contents as $key=>&$arr){
             if($arr['id']==intval($id)){
                 $arr['quantity']=intval($qty);

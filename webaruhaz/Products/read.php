@@ -1,5 +1,7 @@
 <?php
 
+
+
 include "Products/product.class.php";
 $hTag="";
 $talalatokSzama="";
@@ -49,6 +51,7 @@ while($row=$stmt->fetch()){
     </div>
 
     </div>";*/
+    
     $divProducts.="
     <div class='col-12 col-sm-12 col-md-6 col-lg-3 mb-3'>
         <div class='card h-100 justify-content-center text-center productBorder'>
@@ -64,7 +67,7 @@ while($row=$stmt->fetch()){
                 <h5 class='card-title'>Listaár: {$price} Ft</h5>
             </div>
             <div class='card'>
-                <a href='index.php?id={$id}&page=Cart\cart.php' class='btn btn-success'>Add to cart</a>
+                <a href='index.php?page=Cart/cart.php&id={$id}' class='btn btn-success'>Add to cart</a>
             </div>
         </div>
     </div>

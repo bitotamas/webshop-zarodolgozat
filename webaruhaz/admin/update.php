@@ -40,6 +40,24 @@
             $msg="<div class='text-success'>Sikertelen adatmódosítás!</div>";
         }
     }
+    if(isset($_POST['delete'])){
+        $id=$_POST['id'];
+        $sql="DELETE FROM products where id={$id}";
+        $stmt=$db->exec($sql);
+        if($stmt){
+            $str="";
+            $sql="select id,name from products order by id desc";
+            //$stmt=$db->query($sql);
+            $stmt=$db->prepare($sql);
+            $stmt->execute();
+            while($row=$stmt->fetch())
+            $str.="<option value='{$row['id']}'>{$row['name']}</option>";
+
+            $msg="<div class='text-success'>Sikeres törlés!</div>";
+        }else {
+            $msg="<div class='text-success'>Sikertelen törlés!</div>";
+        }
+    }
      
 
 ?>
@@ -81,7 +99,8 @@
                         <label for="">Kép: </label>
                         <input type="text" name="picture" class="form-control" value="<?=$picture?>">
                     </div>
-                    <input type="submit" name="update" value="Módosítás" class="btn btn-success" >
+                    <input type="submit" name="update" value="Módosítás" class="btn btn-success">
+                    <div><input type="submit" name="delete" id="delete" value="Törlés" class="btn btn-danger mt-2"></div>
                 </form>
 
                 <?=$msg?>

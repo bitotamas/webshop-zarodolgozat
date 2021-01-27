@@ -12,7 +12,7 @@ if(isset($_SESSION['email'])){
         <span class='nav-item nav-link  text-white rounded m-2'>Bejelentkezve: {$_SESSION['name']}</span>
     </li>
     <li>
-        <a href='index.php?page=LogReg/profile.php id='menuButtons' class='nav-item nav-link bg-info text-white rounded m-2 text-center nav-right'>Profil</a>
+        <a href='index.php?page=LogReg/profile.php' id='menuButtons' class='nav-item nav-link bg-info text-white rounded m-2 text-center nav-right'>Profil</a>
     </li>
 
     ";
@@ -69,15 +69,17 @@ if(isset($_SESSION['email'])){
             <li class="nav-item">
                 <a href="index.php?categ=psu" id="menuButtons" class="nav-item nav-link bg-danger text-dark rounded m-2">Tápegységek</a>
             </li>
+            
             <!-- BEJELENTKEZÉS ÉS REGISZTRÁCIÓ -->
             <?=$logReg?>
             <!-------------------------------------->
+            
           </ul>
         </div>
         
         </div>
         
-        <a href="index.php?page=cart/Cart.php" class="navbar-brand rounded nav-item"><img id="cart" class="bordered rounded-circle" src="images/shopping-cart.png" alt=""></a>
+        <a href="index.php?page=Cart/cart.php" class="navbar-brand rounded nav-item"><img id="cart" class="bordered rounded-circle" src="images/shopping-cart.png" alt=""></a>
             
 </nav>
 </header> 

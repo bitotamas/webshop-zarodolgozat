@@ -1,6 +1,7 @@
 <?php
 include "Cart/cart.class.php";
 
+
 //print_r($_SESSION);
 
 $cart=new Cart();
@@ -18,7 +19,7 @@ extract($row);
 $item_data=array('id'=>$id,'picture'=>$picture,'name'=>$name,'price'=>$price,'quantity'=>1);
 //print_r($item_data);
 $insert_item=$cart->insert($item_data);
-header("Location:index.php?page=cart/cart.php");
+header("Location:index.php?page=Cart/cart.php");
 }
 /////////////////////////////////////
 
@@ -84,7 +85,7 @@ if(isset($_SESSION['cart_contents'])){
 </div>
 -->
 <div class="m-5"></div>
-<div class='container '>
+<div class='container'>
    <div class='card shopping-cart cartBorder'>
             <div class='card-header bg-danger text-light'>
                 <i class='fa fa-shopping-cart' aria-hidden='true'></i>
@@ -109,7 +110,7 @@ if(isset($_SESSION['cart_contents'])){
                     </div>
                 </div>
                 <div class='pull-right' style='margin: 10px'>
-                    <a href='index.php?page=cart/checkout.php' class='btn btn-success pull-right'>Checkout</a>
+                    <a href='index.php?page=cart/checkout.php' class='btn btn-success pull-right'>Tovább a rendeléshez</a>
                     <div class='pull-right' style='margin: 5px'>
                         Total price: <b><?=$sum==0? "" :$sum?> Ft</b>
                     </div>

@@ -6,10 +6,13 @@ window.addEventListener('load',()=>{
 
 const updateQty=(e)=>{
     let id=e.target.id;
+    console.log("id="+id);
     let qty=e.target.value;
-
+    console.log("qty="+qty);
+    
     let xhr=new XMLHttpRequest();
-    xhr.open('GET','cart/cart_qty.php?id='+id+'&qty='+qty,true);
+    xhr.open("GET","cart_qty.php?id="+id+"&qty="+qty,true);
+    
     xhr.addEventListener('readystatechange',()=>{
         if(xhr.readyState==4 &&xhr.status==200){
             console.log("xhr OK");
@@ -18,5 +21,6 @@ const updateQty=(e)=>{
 
         }
     });
+    
     xhr.send();
 }
