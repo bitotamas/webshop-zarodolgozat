@@ -34,12 +34,12 @@ if(isset($_POST['add']) && $_POST['categories']!="0" && $_POST['name']!=null && 
     $stmt=$db->exec($sql);
 
      if($stmt){
-           $msg="sikeres adatbeiras";
+           $msg="<div class='text-success'>Sikeres adatbeírás!</div>";
            $tbl="";
            megjelenit($db,$tbl);
            header("Location:index.php?page=admin/insert.php");
     }else
-        $msg="hiba!! nem sikerult az adat beirasa az adatbazisba";
+        $msg="<div class='text-danger'>Hiba! Nem sikerült az adat beírása az adatbázisba!</div";
 }
 
 ?>
@@ -71,9 +71,12 @@ if(isset($_POST['add']) && $_POST['categories']!="0" && $_POST['name']!=null && 
                         <label for="">Termék kép: </label>
                         <input type="text" name="picture" class="form-control" value="<?=$picture?>">
                     </div>
-                    <input type="submit" name="add" value="Hozzáadás" class="btn-success m-t-5 p-2 rounded">
+                    <input type="submit" name="add" value="Hozzáadás" class="btn btn-success m-t-5 p-2 rounded">
                     <hr>
-                    <div><a href="index.php?page=admin/adminMenu.php" class="btn-danger m-t-5 p-2 rounded">Vissza az admin menübe</a></div>
+                    <div><a href="index.php?page=admin/adminMenu.php" class="btn btn-danger m-t-5 p-2 rounded">Vissza az admin menübe</a></div>
+                    <!--Message-->
+                    <?=$msg?>
+                    <!--Message-->
                 </form>
             </div>
             <div class="col-5">

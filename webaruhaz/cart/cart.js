@@ -9,7 +9,7 @@ const updateQty=(e)=>{
     let qty=e.target.value;
 
     let xhr=new XMLHttpRequest();
-    xhr.open('GET','cart_qty.php?id='+id+'&qty='+qty,true);
+    xhr.open('GET','cart/cart_qty.php?id='+id+'&qty='+qty,true);
     xhr.addEventListener('readystatechange',()=>{
         if(xhr.readyState==4 &&xhr.status==200){
             console.log("xhr OK");
