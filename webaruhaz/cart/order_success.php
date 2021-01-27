@@ -57,7 +57,7 @@ while($row=$stmt->fetch()){
                 <div class='card-body text-center'>
                     <h6><strong>Végösszeg: <?=$sum?> Ft</strong></h6>
                 </div>
-                 <a class="btn btn-success " href="index.php">Vissza a főoldalra</a>
+                 <a class="btn btn-success " href="index.php?page=home.php">Vissza a főoldalra</a>
             </div>
            
         </div>

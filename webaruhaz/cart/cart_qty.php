@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once "../database/config.php";
-include_once "cart/cart.class.php";
+include_once "Database/config.php";
+include_once "Cart/cart.class.php";
 
 print_r($_GET);
 

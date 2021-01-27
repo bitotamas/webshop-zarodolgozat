@@ -10,7 +10,7 @@ if(isset($_POST['mentes'])){
     //echo $stmt->rowCount();
     if(  $stmt->rowCount()>0){//létezik ilyen email / felhasználó név
 		$row=$stmt->fetch(); 
-		$msg="Ez az email cím már foglalt";
+		$msg="<div class='text-danger'>Ez az email cím már foglalt</div>";
 	}else{
 		
 			$pw=password_hash($password,PASSWORD_DEFAULT); 
@@ -18,8 +18,8 @@ if(isset($_POST['mentes'])){
 			echo $sql;
 			$stmt=$db->exec($sql);
 			if($stmt){
-				$_SESSION["msg"]="sikeres regisztráció";
-				header("location:index.php?page=login.php");
+				$_SESSION["msg"]="Sikeres regisztráció, kérjük jelentkezzen be!";
+				header("location:index.php?page=LogReg/login.php");
 			}
 		
 	}
@@ -35,7 +35,7 @@ if(isset($_POST['mentes'])){
     <form class="col-4 border" action="" method="post" enctype="multipart/form-data">
 		<h2 class="text-center bg-danger p-3 rounded">Regisztráció</h2>
 
-		<!--<div class="alert alert-success " id="msg"><?=$msg?></div>-->	
+		<?=$msg?>	
 		
 	    <div class="form-group">
 				<input type="text" class="form-control" name="nev" placeholder="Név" required value="<?=$nev?>">
@@ -70,6 +70,6 @@ if(isset($_POST['mentes'])){
 	</form>
   </div>
 </div>
-<script src="ellenor.js"></script>
+<script src="LogReg/ellenor.js"></script>
                           
 

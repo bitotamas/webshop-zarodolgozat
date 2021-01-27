@@ -2,7 +2,7 @@
 
 if(!isset($_SESSION["email"])){
     
-    header("Location:index.php?page=login.php");
+    header("Location:index.php?page=LogReg/login.php");
     
 }
 
@@ -107,9 +107,9 @@ if(isset($_POST['button'])){
             <p>Végösszeg: {$sum}</p>
             ";
 
-            include "mailer.php";
+            include "Cart/mailer.php";
             
-            header("Location:index.php?page=cart/order_success.php&order_id=".$order_id);
+            header("Location:index.php?page=Cart/order_success.php&order_id=".$order_id);
             }
         }
     

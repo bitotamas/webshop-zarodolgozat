@@ -1,5 +1,5 @@
 <?php
-include "cart.class.php";
+include "Cart/cart.class.php";
 
 //print_r($_SESSION);
 
@@ -53,7 +53,7 @@ if(isset($_SESSION['cart_contents'])){
                 </div>
             </div>
             <div class='col-2 col-sm-2 col-md-2 text-right'>
-                <a href='index.php?page=cart/delete.php&id={$id}' class='btn btn-outline-danger btn-xs'><i class='fa fa-trash' aria-hidden='true'></i></a>
+                <a href='index.php?page=Cart/delete.php&id={$id}' class='btn btn-outline-danger btn-xs'><i class='fa fa-trash' aria-hidden='true'></i></a>
             </div>
         </div>
     </div>

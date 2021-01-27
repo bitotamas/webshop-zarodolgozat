@@ -1,5 +1,5 @@
 <?php
-include_once "read.php";
+include_once "Products/read.php";
 
 ?>
 <div class="mt-4"></div>

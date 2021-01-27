@@ -1,5 +1,5 @@
 <?php
-include "read.php";
+include "products/read.php";
 ?>
 <style>
 #carouselImg{

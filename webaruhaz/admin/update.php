@@ -58,7 +58,7 @@
                     </div>
                     <input type="submit" name="filter" value="Termék adatainak megjelenítése" class="btn btn-info">
                     <hr>
-                    <div><a href="index.php?page=admin/adminMenu.php" class="btn-danger m-t-5 p-2 rounded name" name="backToAdminMenu">Vissza az admin menübe</a></div>
+                    <div><a href="index.php?page=Admin/adminMenu.php" class="btn-danger m-t-5 p-2 rounded name">Vissza az admin menübe</a></div>
                 </form>
             </div>
 

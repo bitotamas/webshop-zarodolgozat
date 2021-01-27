@@ -1,6 +1,6 @@
 <?php
 
-include "product.class.php";
+include "Products/product.class.php";
 $hTag="";
 $talalatokSzama="";
 $product=new Product($db);
@@ -53,7 +53,7 @@ while($row=$stmt->fetch()){
     <div class='col-12 col-sm-12 col-md-6 col-lg-3 mb-3'>
         <div class='card h-100 justify-content-center text-center border border-dark'>
             
-                <img id='cartImg' src='images/{$picture}' class='card-img-top mt-5'>
+                <img id='cartImg' src='Images/{$picture}' class='card-img-top mt-5'>
             
             <div class='card-body border'>
                 <h4 class='card-title'>{$name}</h4>
@@ -64,7 +64,7 @@ while($row=$stmt->fetch()){
                 <h5 class='card-title'>Listaár: {$price} Ft</h5>
             </div>
             <div class='card'>
-                <a href='index.php?id={$id}&page=cart\cart.php' class='btn btn-success'>Add to cart</a>
+                <a href='index.php?id={$id}&page=Cart\cart.php' class='btn btn-success'>Add to cart</a>
             </div>
         </div>
     </div>

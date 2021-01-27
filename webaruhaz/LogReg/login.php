@@ -16,10 +16,10 @@ if(isset($_POST['be'])){
             //echo "ok";
             header('Location: index.php?page=home.php');
         }else
-            $msg="Helytelen email cím és jelszó páros !";
+            $msg="<div class='text-danger'>Helytelen email cím és jelszó páros !</div>";
         
     }else
-        $msg="Helytelen email cím";
+            $msg="<div class='text-danger'>Helytelen email cím</div>";
 
 }
 
@@ -27,7 +27,7 @@ if(isset($_POST['be'])){
 <div class="container">
   <div class="row justify-content-md-center p-5">
     <form class="col-md-4 border" method="post">
-        <div><?=$msg?></div>
+        <?=$msg?>
 	    <h2 class="text-center">Bejelentkezés</h2>		
         <div class="form-group">
             <input type="text" name="email" class="form-control" placeholder="E-mail" required="required" value="">
@@ -43,7 +43,7 @@ if(isset($_POST['be'])){
         <div class="form-group">
             <button type="submit" name="be" class="btn btn-success btn-block">Bejelentkezés </button>
         </div>
-        <a href="register.php" class="btn btn-warning btn-block">Regisztráció...</a>
+        <a href="LogReg/register.php" class="btn btn-warning btn-block">Regisztráció...</a>
     </form>
     
     
