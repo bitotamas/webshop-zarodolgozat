@@ -84,12 +84,12 @@ if(isset($_SESSION['cart_contents'])){
 </div>
 -->
 <div class="m-5"></div>
-<div class='container'>
-   <div class='card shopping-cart'>
-            <div class='card-header bg-info text-light'>
+<div class='container '>
+   <div class='card shopping-cart cartBorder'>
+            <div class='card-header bg-danger text-light'>
                 <i class='fa fa-shopping-cart' aria-hidden='true'></i>
                 Bevásárlókosár
-                <a href='index.php?page=home.php' class='btn btn-danger btn-sm pull-right'>Vásárlás fojtatása</a>
+                <a href='index.php?page=home.php' class='btn btn-warning btn-sm pull-right'>Vásárlás fojtatása</a>
                 <div class='clearfix'></div>
             </div>
             <div class='card-body' id="table">
@@ -118,4 +118,5 @@ if(isset($_SESSION['cart_contents'])){
         </div>
 </div>
 <div class="m-5"></div>
-<script src="cart/cart.js"></script>
+<script src="Cart/cart.js"></script>
+<link rel="stylesheet" href="Style/style.css">

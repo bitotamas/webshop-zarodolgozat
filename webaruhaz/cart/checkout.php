@@ -159,4 +159,5 @@ if(isset($_POST['button'])){
             </div>
         </div>
     </div>
-</div>    
+</div>
+<link rel="stylesheet" href="Style/style.css">    

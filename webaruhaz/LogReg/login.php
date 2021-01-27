@@ -25,10 +25,10 @@ if(isset($_POST['be'])){
 
 ?>
 <div class="container">
-  <div class="row justify-content-md-center p-5">
-    <form class="col-md-4 border" method="post">
+  <div class="row justify-content-md-center p-5 ">
+    <form class="col-md-4 logRegBorder bg-white p-4" method="post">
         <?=$msg?>
-	    <h2 class="text-center">Bejelentkezés</h2>		
+	    <h2 class="text-center bg-danger mt-2 mb-4 p-2 rounded">Bejelentkezés</h2>		
         <div class="form-group">
             <input type="text" name="email" class="form-control" placeholder="E-mail" required="required" value="">
         </div>
@@ -49,5 +49,4 @@ if(isset($_POST['be'])){
     
 </div>
 </div>
-</body>
-</html>                                		                            
+<link rel="stylesheet" href="Style/style.css">                                		                            

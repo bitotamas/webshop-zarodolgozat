@@ -51,7 +51,7 @@ while($row=$stmt->fetch()){
     </div>";*/
     $divProducts.="
     <div class='col-12 col-sm-12 col-md-6 col-lg-3 mb-3'>
-        <div class='card h-100 justify-content-center text-center border border-dark'>
+        <div class='card h-100 justify-content-center text-center productBorder'>
             
                 <img id='cartImg' src='Images/{$picture}' class='card-img-top mt-5'>
             
@@ -73,4 +73,5 @@ while($row=$stmt->fetch()){
 }
 
 ?>
+<link rel="stylesheet" href="Style/style.css">
 

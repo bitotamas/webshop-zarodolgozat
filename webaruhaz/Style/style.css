@@ -1,38 +1,77 @@
-.bs-example{
-    margin: 20px;
-}
-#menuButtons{
-    font-weight: bold;
-    font-size: larger;
-}
-.nav{
-    margin-bottom: 30px;
-}
 
+/*---------*INDEX---------*/
+body{
+    background-image: url("../Background/bg.jpg");
+    
+}
+/*-------------------------*/
+
+
+/*---------*CART---------*/
 #cart{
     max-width: 60px;
-}
-
-#search{
-    max-width: 30px;
-}
-#search-bar{
-    width: 500px;
-   
-}
-#logo{
-    max-width: 70px;
-}
-.item{
-    max-width: 500px;
-}
-a{
-    color: black;
+    border: solid 1px red;
 }
 #cartImg{
     width: 100%;
     
 }
+.cartBorder{
+    border: solid 3px red;
+}
+/*-------------------------*/
 
 
+/*---------*LOGO---------*/
+#logo{
+    max-width: 70px;
+}
+/*-------------------------*/
 
+
+/*---------*NAVBAR---------*/
+.navStyle{
+    border-bottom: solid 2px red;
+    border-top: solid 2px red;
+    background-image: url("../Navbars/nav.jpg");
+}
+#menuButtons{
+    font-weight: bold;
+    font-size: larger;
+    border: solid 1px red;
+}
+.footerBorder{
+    border-top: solid 2px red; 
+}
+/*-------------------------*/
+
+
+/*---------*LOGREG---------*/
+.logRegBorder{
+    border: solid 3px red;
+}
+/*-------------------------*/
+
+
+/*---------*PRODUCTS---------*/
+.productBorder{
+    border:red 10px solid;
+}
+.productHTagBorder{
+    border: solid 3px red;
+}
+/*-------------------------*/
+
+
+/*---------*CAROSUEL---------*/
+#carouselImg{
+    max-height: 341px;
+}
+/*-------------------------*/
+
+
+/*---------*ADMIN---------*/
+.adminBorder{
+    border: solid 3px red;
+}
+/*-------------------------*/

@@ -32,8 +32,8 @@ if(isset($_POST['mentes'])){
 
 <div class="container">
   <div class="row justify-content-md-center p-5">
-    <form class="col-4 border" action="" method="post" enctype="multipart/form-data">
-		<h2 class="text-center bg-danger p-3 rounded">Regisztráció</h2>
+    <form class="col-4 logRegBorder bg-white" action="" method="post" enctype="multipart/form-data">
+		<h2 class="text-center bg-danger mt-2 mb-4 p-2 rounded">Regisztráció</h2>
 
 		<?=$msg?>	
 		

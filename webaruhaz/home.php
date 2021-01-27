@@ -1,14 +1,7 @@
 <?php
 include "products/read.php";
 ?>
-<style>
-#carouselImg{
-    max-height: 341px;
-}
-table,tr,td,th,thead{
-    border: 2px solid black;
-}
-</style>
+
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -36,10 +29,11 @@ table,tr,td,th,thead{
   </a>
 </div>
 <div class="container justify-content-center m-auto">
-      <div class="jumbotron text-center bg-danger rounded"><h1>Ajánlatok</h1></div>
+      <div class="jumbotron text-center bg-danger rounded text-black productHTagBorder"><h1>Ajánlatok</h1></div>
        <div class="row">
         <?=$divProducts?>
        </div>
            
 </div>
+<link rel="stylesheet" href="Style/style.css">
 

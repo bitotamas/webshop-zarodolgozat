@@ -1,5 +1,5 @@
 
-<footer class="p-4 bg-danger text-white">
+<footer class="p-4 bg-danger text-white footerBorder">
         <div class="text-center">
         <a href="#top" class="btn-info rounded">Vissza a lap tetejére</a><br>
             <small>
@@ -12,3 +12,4 @@
 
         </div>
 </footer>
+<link rel="stylesheet" href="Style/style.css">

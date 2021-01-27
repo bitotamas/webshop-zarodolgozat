@@ -43,7 +43,7 @@ if(isset($_POST['add']) && $_POST['categories']!="0" && $_POST['name']!=null && 
 }
 
 ?>
-<div class="container border">
+<div class="container adminBorder bg-white">
         <h1 class="text-center">Termékek</h1>
         <div class="row m-1 p-2">   
             <div class="col-5">

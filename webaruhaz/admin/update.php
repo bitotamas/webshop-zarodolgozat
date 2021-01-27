@@ -43,7 +43,7 @@
      
 
 ?>
-<div class="container border">
+<div class="container adminBorder bg-white">
         <h1 class="text-center">Termékek módosítása</h1>
         <div class="row m-1 p-2 justify-content-center">   
             <div class="col-5">

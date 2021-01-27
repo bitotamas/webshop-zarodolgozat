@@ -63,6 +63,7 @@ while($row=$stmt->fetch()){
         </div>
         
     </div>
+    <link rel="stylesheet" href="Style/style.css">
             
    
 
