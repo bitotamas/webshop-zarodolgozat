@@ -1,10 +1,11 @@
 <?php
+ob_start();
 session_start();
 require_once "Database/config.php";
 //print_r($_SESSION);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,18 +17,27 @@ require_once "Database/config.php";
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-</head>
-<body>
-<?php
-    include "Navbars/nav.php";
-    
-        if(isset($_GET['page'])){
-            include $_GET['page'];
-        }else if(isset($_GET['categ'])){    
-                include "Products/products.php";  
-        }else include "home.php";
 
-    include "Navbars/footer.php";
-        ?> 
+</head>
+
+<body>
+<?php include "Navbars/nav.php"; ?>    
+<div class="wrapper">
+    <?php
+        
+        
+            if(isset($_GET['page'])){
+                include $_GET['page'];
+            }else if(isset($_GET['categ'])){    
+                    include "Products/products.php";  
+            }else include "home.php";
+
+        
+            ?> 
+          <div class="push"></div>
+</div>
+
+<?php include "Navbars/footer.php";?>
+
 </body>
 </html>

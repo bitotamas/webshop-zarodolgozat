@@ -14,7 +14,7 @@ if(isset($_POST['be'])){
             $_SESSION['name']=$row['name'];
             $_SESSION['id']=$row['id'];
             //echo "ok";
-            header('Location: index.php?page=home.php');
+            header('Location: index.php?page=./home.php');
         }else
             $msg="<div class='text-danger'>Helytelen email cím és jelszó páros !</div>";
         
@@ -26,7 +26,7 @@ if(isset($_POST['be'])){
 ?>
 <div class="container">
   <div class="row justify-content-md-center p-5 ">
-    <form class="col-md-4 logRegBorder bg-white p-4" method="post">
+    <form class="col-lg-8 col-12 col-md-8 logRegBorder bg-white p-4" method="post">
         <?=$msg?>
 	    <h2 class="text-center bg-danger mt-2 mb-4 p-2 rounded">Bejelentkezés</h2>		
         <div class="form-group">

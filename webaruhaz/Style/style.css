@@ -1,9 +1,15 @@
 
 /*---------*INDEX---------*/
+
+                 
+
 body{
     background-image: url("../Background/bg.png");
-    
 }
+
+                  
+
+
 /*-------------------------*/
 
 
@@ -31,15 +37,14 @@ body{
 
 /*---------*NAVBAR---------*/
 .navStyle{
-    border-bottom: solid 2px red;
-    border-top: solid 2px red;
-    background-image: url("../Navbars/nav.jpg");
+   /* background-image: url("../Navbars/nav.jpg");*/
 }
-#menuButtons{
+/*#menuButtons{
     font-weight: bold;
     font-size: larger;
     border: solid 1px red;
-}
+}*/
+/*---------*FOOTER----------*/
 .footerBorder{
     border-top: solid 2px red; 
 }
@@ -75,3 +80,67 @@ body{
     border: solid 3px red;
 }
 /*-------------------------*/
+
+.wrapper {
+    margin-top: 56px;
+    min-height: 100%;
+    margin-bottom: -150px;
+}
+
+.footerer,.push{
+    height: 150px;
+}
+.sajattoggler{
+    display: flex;
+    justify-content: flex-start;
+}
+@media screen and (min-width:1200px){
+ .wrapper{
+     margin-top: 120px;
+}
+.proba{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99vw;
+    border: 1px solid cyan;
+   
+
+}
+
+.sajatlogo{
+    flex-grow: 1;
+}
+.sajatmenu{
+    flex-grow: 12;
+    display: flex;
+    justify-content: center;
+}
+.sajatkosar{
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 2;
+}
+.alsosor{
+    display: flex;
+    justify-content: center;
+    border: 1px solid green;
+}
+.felsosor{
+    display: flex;
+    width: 100%;
+    border: 1px solid pink;
+    justify-content: center;
+}
+.kozepso{
+    display: flex;
+    width: 60vw;
+}
+ul>li{
+    width: 150px;
+    font-weight: bolder;
+}
+}
+
+
+

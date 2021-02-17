@@ -48,7 +48,6 @@ class Cart{
             }
         }
         $_SESSION['cart_contents']=$this->cart_contents;
-
         return TRUE;
     }
 }

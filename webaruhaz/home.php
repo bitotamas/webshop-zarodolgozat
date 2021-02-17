@@ -1,5 +1,5 @@
 <?php
-include "products/read.php";
+include "Products/read.php";
 ?>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -32,8 +32,7 @@ include "products/read.php";
       <div class="jumbotron text-center bg-danger rounded text-black productHTagBorder"><h1>Ajánlatok</h1></div>
        <div class="row">
         <?=$divProducts?>
-       </div>
-           
+       </div>          
 </div>
 <link rel="stylesheet" href="Style/style.css">
 

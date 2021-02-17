@@ -107,9 +107,9 @@ if(isset($_POST['button'])){
             <p>Végösszeg: {$sum}</p>
             ";
 
-            include "Cart/mailer.php";
+            include "Cartfiles/mailer.php";
             
-            header("Location:index.php?page=Cart/order_success.php&order_id=".$order_id);
+            header("Location:index.php?page=Cartfiles/order_success.php&order_id=".$order_id);
             }
         }
     
@@ -118,46 +118,44 @@ if(isset($_POST['button'])){
 ?>
 
 <div class='container'>
-    <div class="text-center bg-info"><h1>Kosár adatai</h1></div>
-            <div class='card shopping-cart'>
-                <div class='card-body'>   
-                    <?=$cartDetails?>      
+    <div class="row justify-content-center">
+        <div class="text-center bg-info col-12"><h1>Kosár adatai</h1></div>
+                <div class='card shopping-cart'>
+                    <div class='card-body border'>   
+                        <?=$cartDetails?>      
+                    </div>
+                    <div class='card-body text-center bg-info'>
+                        <h6><strong>Végösszeg: <?=$sum?> Ft</strong></h6>
+                    </div>
                 </div>
-                <div class='card-body text-center'>
-                    <h6><strong>Végösszeg: <?=$sum?> Ft</strong></h6>
-                </div>
-            </div>
         </div>
-</div>
-
-<div class="container">
-    <div class="jumbotron m-5 ">
-            <div class="col-12">
-                <form method="post">
-                    <h2>Az Ön adatai</h2>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="name" id="" placeholder="Name" value="<?=$getName?>" readonly>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="email" id="" placeholder="Email" value="<?=$getEmail?>" readonly>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" name="phone" id="" placeholder="Phone" value="<?=$getPhone?>" readonly>
-                    </div>
-                
-                    <h2>Szállítási adatok</h2>
-                    <div class="form-group">
-                        <input class="form-control" type="number" name="isz" id="" placeholder="Irányító szám" value="" required>
-                        <input class="form-control" type="text" name="city" id="" placeholder="Város" value="" required>
-                        <input class="form-control" type="text" name="street" id="" placeholder="Utca" value="" required>
-                        <input class="form-control" type="number" name="streetNumber" id="" placeholder="Házszám" value="" required>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-group btn btn-success btn btn-block" type="submit" name="button" id="" value="Place order">
-                    </div>
-                </form>
+    </div>
+    <div class="row justify-content-center">
+            <div class="col-8">
+                    <form method="post">
+                        <h2>Az Ön adatai</h2>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="name" id="" placeholder="Name" value="<?=$getName?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="email" id="" placeholder="Email" value="<?=$getEmail?>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="phone" id="" placeholder="Phone" value="<?=$getPhone?>" readonly>
+                        </div>
+                    
+                        <h2>Szállítási adatok</h2>
+                        <div class="form-group">
+                            <input class="form-control" type="number" name="isz" id="" placeholder="Irányító szám" value="" required>
+                            <input class="form-control" type="text" name="city" id="" placeholder="Város" value="" required>
+                            <input class="form-control" type="text" name="street" id="" placeholder="Utca" value="" required>
+                            <input class="form-control" type="number" name="streetNumber" id="" placeholder="Házszám" value="" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-group btn btn-success btn btn-block" type="submit" name="button" id="" value="Place order">
+                        </div>
+                    </form>
             </div>
-        </div>
     </div>
 </div>
 <link rel="stylesheet" href="Style/style.css">    

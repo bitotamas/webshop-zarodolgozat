@@ -5,12 +5,12 @@ megjelenit($db,$tbl);
 
 
 function megjelenit($db,&$tbl){//ha a bemeno parametert meg is akarjuk valtoztatni akkor referencat kell hasznalni
-    $sql="select id,category,name,price,picture from products order by id desc";
+    $sql="select id,category,name,price,picture,quantity from products order by id desc";
     $stmt=$db->prepare($sql);//*
     $stmt->execute();//*
     while($row=$stmt->fetch()){
     extract($row);
-    $tbl.="<tr><td>{$id}</td><td>{$category}</td><td>{$name}</td><td>{$price}</td><td>{$picture}</td></tr>";
+    $tbl.="<tr><td>{$id}</td><td>{$category}</td><td>{$name}</td><td>{$price}</td><td>{$picture}</td><td>{$quantity}</td></tr>";
     }
 } 
 
@@ -20,17 +20,19 @@ $category="";
 $name="";
 $price="";
 $picture="";
+$quantity="";
 
-print_r($_POST);
-if(isset($_POST['add']) && $_POST['categories']!="0" && $_POST['name']!=null && $_POST['price']!=null && $_POST['picture']!=null){
+//print_r($_POST);
+if(isset($_POST['add']) && $_POST['categories']!="0"){
     
     
     $category=$_POST['categories'];
     $name=$_POST['name'];
     $price=$_POST['price'];
     $picture=$_POST['picture'];
+    $quantity=$_POST['quantity'];
 
-    $sql="insert into products values (null,'{$category}','{$name}',{$price},'{$picture}')";
+    $sql="insert into products values (null,'{$category}','{$name}',{$price},'{$picture}',{$quantity})";
     $stmt=$db->exec($sql);
 
      if($stmt){
@@ -61,15 +63,19 @@ if(isset($_POST['add']) && $_POST['categories']!="0" && $_POST['name']!=null && 
                     </div>
                     <div class="form-group">
                         <label for="">Termék neve: </label>
-                        <input type="text" name="name" class="form-control" value="<?=$name?>">
+                        <input type="text" name="name" class="form-control" value="<?=$name?>" required>
                     </div>
                     <div class="form-group">
                         <label for="">Termék ára: </label>
-                        <input type="number" name="price" class="form-control" value="<?=$price?>">
+                        <input type="number" name="price" class="form-control" value="<?=$price?>" required>
                     </div>
                     <div class="form-group">
                         <label for="">Termék kép: </label>
-                        <input type="text" name="picture" class="form-control" value="<?=$picture?>">
+                        <input type="text" name="picture" class="form-control" value="<?=$picture?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Termék darabszáma: </label>
+                        <input type="text" name="quantity" class="form-control" value="<?=$quantity?>" required>
                     </div>
                     <input type="submit" name="add" value="Hozzáadás" class="btn btn-success m-t-5 p-2 rounded">
                     <hr>
@@ -80,7 +86,7 @@ if(isset($_POST['add']) && $_POST['categories']!="0" && $_POST['name']!=null && 
                 </form>
             </div>
             <div class="col-5">
-                <table class="table table-bordered table-striped"><thead><th>Azonosító</th><th>Kategória</th><th>Név</th><th>Ár</th><th>Kép</th></thead>
+                <table class="table table-bordered table-striped"><thead><th>Azonosító</th><th>Kategória</th><th>Név</th><th>Ár</th><th>Kép</th><th>Darabszám</th></thead>
                         <?=$tbl?>
                 </table>
             </div>

@@ -1,5 +1,5 @@
 <?php
-    $str=$msg=$category=$name=$price=$picture=$id="";  
+    $str=$msg=$category=$name=$price=$picture=$id=$quantity="";  
 
     //a legördülő lista feltöltése:
     $sql="select id,name from products order by id desc";
@@ -15,7 +15,7 @@
         //$sql="select az,nev,kezdev from munkasok where az={$id}";
         //$stmt=$db->query($sql);
         //$row=$stmt->fetch();
-        $sql="select category,name,price,picture from products where id={$id}";
+        $sql="select category,name,price,picture,quantity from products where id={$id}";
         $stmt=$db->query($sql);
         $row=$stmt->fetch();
 
@@ -23,6 +23,7 @@
         $name=$row['name'];
         $price=$row['price'];
         $picture=$row['picture'];
+        $quantity=$row['quantity'];
     }
     //modositas submit gomb megnyomása után:
     if(isset($_POST['update'])){
@@ -32,7 +33,9 @@
         $name=$_POST['name'];
         $price=$_POST['price'];
         $picture=$_POST['picture'];
-        $sql="UPDATE products set category='{$category}', name='{$name}',price={$price},picture='{$picture}' where id={$id}";
+        $quantity=$_POST['quantity'];
+
+        $sql="UPDATE products set category='{$category}', name='{$name}',price={$price},picture='{$picture}',quantity={$quantity} where id={$id}";
         $stmt=$db->exec($sql);
         if($stmt){
             $msg="<div class='text-success'>Sikeres adatmódosítás!</div>";
@@ -98,6 +101,10 @@
                     <div class="form-group">
                         <label for="">Kép: </label>
                         <input type="text" name="picture" class="form-control" value="<?=$picture?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Darabszám: </label>
+                        <input type="text" name="quantity" class="form-control" value="<?=$quantity?>">
                     </div>
                     <input type="submit" name="update" value="Módosítás" class="btn btn-success">
                     <div><input type="submit" name="delete" id="delete" value="Törlés" class="btn btn-danger mt-2"></div>

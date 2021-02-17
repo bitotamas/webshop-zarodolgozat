@@ -11,16 +11,17 @@ const updateQty=(e)=>{
     console.log("qty="+qty);
     
     let xhr=new XMLHttpRequest();
-    xhr.open("GET","cart_qty.php?id="+id+"&qty="+qty,true);
+    xhr.open("GET","Cartfiles/cart_qty.php?id="+id+"&qty="+qty,true);
     
     xhr.addEventListener('readystatechange',()=>{
         if(xhr.readyState==4 &&xhr.status==200){
             console.log("xhr OK");
             location.reload();
             console.log(xhr.responseText);
-
+           
         }
     });
     
     xhr.send();
+    
 }
