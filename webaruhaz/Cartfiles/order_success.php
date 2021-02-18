@@ -7,7 +7,7 @@ extract($row);
 $rendelo=$name;
 
 $ordersStr="";
-$sum="";
+$sum=0;
 $orderdetails="SELECT c.name,c.price,b.quantity,c.price*b.quantity as subtotal
 from orders a, order_items b, products c
 where a.id=b.order_id and b.product_id=c.id and a.id={$id}";

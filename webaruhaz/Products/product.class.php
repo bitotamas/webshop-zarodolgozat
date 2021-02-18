@@ -28,7 +28,7 @@ class Product{
         return $stmt;
     }
     function filteredRead($categ){
-        $sql="SELECT * from {$this->table_name} where category='{$categ}' order by name";
+        $sql="SELECT * from {$this->table_name} where category='{$categ}' order by quantity desc,name";
         $stmt=$this->conn->query($sql);
         return $stmt;
     }

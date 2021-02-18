@@ -1,23 +1,13 @@
 
 /*---------*INDEX---------*/
-
-                 
-
 body{
-    background-image: url("../Background/bg.png");
+    background-image: url("../Background/bg.gif");
+   
 }
-
-                  
-
-
 /*-------------------------*/
 
 
 /*---------*CART---------*/
-#cart{
-    max-width: 60px;
-    border: solid 1px red;
-}
 #cartImg{
     width: 100%;
     
@@ -28,25 +18,12 @@ body{
 /*-------------------------*/
 
 
-/*---------*LOGO---------*/
-#logo{
-    max-width: 70px;
-}
-/*-------------------------*/
-
-
-/*---------*NAVBAR---------*/
-.navStyle{
-   /* background-image: url("../Navbars/nav.jpg");*/
-}
-/*#menuButtons{
-    font-weight: bold;
-    font-size: larger;
-    border: solid 1px red;
-}*/
 /*---------*FOOTER----------*/
 .footerBorder{
     border-top: solid 2px red; 
+}
+.footerer,.push{
+    height: 150px;
 }
 /*-------------------------*/
 
@@ -81,63 +58,84 @@ body{
 }
 /*-------------------------*/
 
+/*Összes tartalom*/
 .wrapper {
-    margin-top: 56px;
+    margin-top: 78px;
     min-height: 100%;
     margin-bottom: -150px;
 }
+/*-----------------------------------------*/
 
-.footerer,.push{
-    height: 150px;
+
+/*-----------------NEW NAVBAR---------------*/
+#logo{
+    max-width: 70px;
 }
-.sajattoggler{
+#cart{
+    max-width: 60px;
+    border: solid 1px red;
+}
+
+.navStyle{
+    background-image: url("../Navbars/nav.gif");
+ }
+.mtToggler{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+}
+.mtTogglerButton{
+    width: 100px;
+    
+}
+ul>li{
+    font-size: 25px;
+    font-weight: bolder;
 }
 @media screen and (min-width:1200px){
  .wrapper{
-     margin-top: 120px;
+     margin-top: 138px;
 }
-.proba{
+/*A navbar összes tartalma*/
+.mtNav{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 99vw;
-    border: 1px solid cyan;
-   
-
 }
-
-.sajatlogo{
-    flex-grow: 1;
+/*Logo*/
+.mtLogo{
+    flex-grow: 2;
 }
-.sajatmenu{
-    flex-grow: 12;
+/*Három oszlop (logo,gombok,kosár)*/
+.mtMenu{
+    flex-grow: 10;
     display: flex;
     justify-content: center;
 }
-.sajatkosar{
+/*Középső oszlop felső sora*/
+.mtMenuButtons{
+    display: flex;
+    width: 70vw;
+}
+.mtCategories{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+/*Középső oszlop alsó sora*/
+.mtUser{
+    display: flex;
+    justify-content: center;
+}
+/*Kosár*/
+.mtCart{
     display: flex;
     justify-content: flex-end;
     flex-grow: 2;
 }
-.alsosor{
-    display: flex;
-    justify-content: center;
-    border: 1px solid green;
-}
-.felsosor{
-    display: flex;
-    width: 100%;
-    border: 1px solid pink;
-    justify-content: center;
-}
-.kozepso{
-    display: flex;
-    width: 60vw;
-}
+/*Menü elemek stílusa*/
 ul>li{
-    width: 150px;
+    width: 250px;
     font-weight: bolder;
 }
 }

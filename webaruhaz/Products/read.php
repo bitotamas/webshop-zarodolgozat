@@ -27,6 +27,7 @@ $nr=$stmt->rowCount();
 $talalatokSzama=$stmt->rowCount();
 //echo $nr;
 $divProducts="";
+$hozzaad="";
 if($nr>0){
 while($row=$stmt->fetch()){
     extract($row);
@@ -51,7 +52,11 @@ while($row=$stmt->fetch()){
     </div>
 
     </div>";*/
-   
+if($quantity==0){
+    $hozzaad="<span class='bg-warning'>Nincs raktáron</span>";
+}else{
+    $hozzaad="<a href='index.php?page=Cartfiles/cart.php&id={$id}' class='btn btn-success'>Add to cart</a>";
+}
     $divProducts.="
     <div class='col-12 col-sm-12 col-md-6 col-lg-3 mb-3'>
         <div class='card h-100 justify-content-center text-center productBorder'>
@@ -67,7 +72,7 @@ while($row=$stmt->fetch()){
                 <h5 class='card-title'>Listaár: {$price} Ft</h5>
             </div>
             <div class='card'>
-                <a href='index.php?page=Cartfiles/cart.php&id={$id}' class='btn btn-success'>Add to cart</a>
+               {$hozzaad}
             </div>
         </div>
     </div>

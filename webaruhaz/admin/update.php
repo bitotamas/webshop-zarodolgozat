@@ -1,6 +1,7 @@
 <?php
+    print_r($_POST);
     $str=$msg=$category=$name=$price=$picture=$id=$quantity="";  
-
+    $updateResz="";
     //a legördülő lista feltöltése:
     $sql="select id,name from products order by id desc";
     //$stmt=$db->query($sql);
@@ -24,6 +25,32 @@
         $price=$row['price'];
         $picture=$row['picture'];
         $quantity=$row['quantity'];
+
+        $updateResz=" <form action='' method='post'>
+        <input type='text' name='id' hidden  value='{$id}'>
+        <div class='form-group'>
+            <label for=''>Kategória: </label>
+            <input type='text' name='category' class='form-control' value='{$category}'>
+        </div>
+        <div class='form-group'>
+            <label for=''>Termék neve: </label>
+            <input type='text' name='name' class='form-control' value='{$name}'>
+        </div>
+        <div class='form-group'>
+            <label for=''>Ár: </label>
+            <input type='number' name='price' class='form-control' value='{$price}'>
+        </div>
+        <div class='form-group'>
+            <label for=''>Kép: </label>
+            <input type='text' name='picture' class='form-control' value='{$picture}'>
+        </div>
+        <div class='form-group'>
+            <label for=''>Darabszám: </label>
+            <input type='text' name='quantity' class='form-control' value='{$quantity}'>
+        </div>
+        <input type='submit' name='update' value='Módosítás' class='btn btn-success'>
+        <div><input type='submit' name='delete' id='delete' value='Törlés' class='btn btn-danger mt-2'></div>
+    </form>";
     }
     //modositas submit gomb megnyomása után:
     if(isset($_POST['update'])){
@@ -84,32 +111,9 @@
             </div>
 
             <div class="col-5">
-                <form action="" method="post">
-                    <input type="text" name="id" hidden  value="<?=$id?>">
-                    <div class="form-group">
-                        <label for="">Kategória: </label>
-                        <input type="text" name="category" class="form-control" value="<?=$category?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Termék neve: </label>
-                        <input type="text" name="name" class="form-control" value="<?=$name?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Ár: </label>
-                        <input type="number" name="price" class="form-control" value="<?=$price?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Kép: </label>
-                        <input type="text" name="picture" class="form-control" value="<?=$picture?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Darabszám: </label>
-                        <input type="text" name="quantity" class="form-control" value="<?=$quantity?>">
-                    </div>
-                    <input type="submit" name="update" value="Módosítás" class="btn btn-success">
-                    <div><input type="submit" name="delete" id="delete" value="Törlés" class="btn btn-danger mt-2"></div>
-                </form>
-
+                <!-----Adatmódosító rész----------->
+                    <?=$updateResz?>
+                <!--------------------------------->
                 <?=$msg?>
             </div>
     </div>

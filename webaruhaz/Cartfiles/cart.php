@@ -6,17 +6,19 @@ print_r($_SESSION);*/
 
 $cart=new Cart();
 
+
 $sum=0;
 $strCart="";
 //print_r($_GET);
 /////////////////////////////////////
 if(isset($_GET['id'])){
 
-$query=$db->query("SELECT * from products where id={$_GET['id']}");
+$query=$db->query("SELECT id,category,name,price,picture,quantity as dbqty from products where id={$_GET['id']}");
 $row=$query->fetch();
+
 extract($row);
 
-$item_data=array('id'=>$id,'picture'=>$picture,'name'=>$name,'price'=>$price,'quantity'=>1);
+$item_data=array('id'=>$id,'picture'=>$picture,'name'=>$name,'price'=>$price,'dbqty'=>$dbqty,'quantity'=>1);
 //print_r($item_data);
 $insert_item=$cart->insert($item_data);
 header("Location:index.php?page=Cartfiles/cart.php");
@@ -25,9 +27,13 @@ header("Location:index.php?page=Cartfiles/cart.php");
 
 if(isset($_SESSION['cart_contents'])){
     $total=0;
+    print_r($_SESSION);
 
     foreach($_SESSION['cart_contents'] as $key=>$arr){
+
+        print_r($arr);
         extract($arr);
+        
         $total=intval($quantity*$price);
         $sum+=$total;
         /*
@@ -50,7 +56,7 @@ if(isset($_SESSION['cart_contents'])){
             </div>
             <div class='col-4 col-sm-4 col-md-4'>
                 <div class='quantity'>
-                <input type='number' id='{$id}' value='{$quantity}' step='1' max='99' min='1'  title='Qty' class='qty' size='4'>
+                <input type='number' id='{$id}' value='{$quantity}' step='1' max='{$dbqty}' min='1'  title='Qty' class='qty' size='4'>
                 </div>
             </div>
             <div class='col-2 col-sm-2 col-md-2 text-right'>

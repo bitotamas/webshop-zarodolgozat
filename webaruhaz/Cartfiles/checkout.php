@@ -87,7 +87,7 @@ if(isset($_POST['button'])){
             foreach($_SESSION['cart_contents'] as $key=>$arr){
                 extract($arr);
                 $sql.="INSERT into order_items values(null,{$order_id},{$id},{$quantity});";
-
+                $sql.="UPDATE products set quantity=(quantity-{$quantity}) where id=$id;";
                 $cartDetailsEmail.="
                 <hr>
                 <p>{$name}</p>
@@ -95,7 +95,7 @@ if(isset($_POST['button'])){
                 <p>{$quantity}</p>
                 <hr>
                 ";
-
+                
 
             }
             $stmt=$db->exec($sql);
