@@ -23,7 +23,7 @@ class Product{
     }
 */
     function readRandom(){
-        $sql="SELECT * from {$this->table_name} ORDER BY RAND() LIMIT 8";
+        $sql="SELECT * from {$this->table_name} where quantity!=0 ORDER BY RAND() LIMIT 8";
         $stmt=$this->conn->query($sql);
         return $stmt;
     }

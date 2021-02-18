@@ -90,12 +90,14 @@ body{
 ul>li{
     font-size: 25px;
     font-weight: bolder;
+    width: 340px;
 }
 @media screen and (min-width:1200px){
  .wrapper{
      margin-top: 138px;
 }
 /*A navbar összes tartalma*/
+
 .mtNav{
     display: flex;
     justify-content: center;
@@ -135,7 +137,7 @@ ul>li{
 }
 /*Menü elemek stílusa*/
 ul>li{
-    width: 250px;
+    width: 340px;
     font-weight: bolder;
 }
 }

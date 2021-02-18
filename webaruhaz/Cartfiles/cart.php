@@ -27,11 +27,9 @@ header("Location:index.php?page=Cartfiles/cart.php");
 
 if(isset($_SESSION['cart_contents'])){
     $total=0;
-    print_r($_SESSION);
 
     foreach($_SESSION['cart_contents'] as $key=>$arr){
 
-        print_r($arr);
         extract($arr);
         
         $total=intval($quantity*$price);
@@ -90,7 +88,7 @@ if(isset($_SESSION['cart_contents'])){
     
 </div>
 -->
-<div class="m-5"></div>
+
 <div class='container'>
    <div class='card shopping-cart cartBorder'>
             <div class='card-header bg-danger text-light'>

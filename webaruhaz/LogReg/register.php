@@ -56,7 +56,7 @@ if(isset($_POST['mentes'])){
         </div>  
 
 		<div class="form-group">
-			<input type="text" class="form-control" name="phone" placeholder="Telefonszám" required>
+			<input type="text" class="form-control" name="phone" placeholder="Telefonszám" title="A telefonszámát a leendő megrendelések miatt kell megadnia." required>
 		 </div>	  
 		<div>
 		</div>

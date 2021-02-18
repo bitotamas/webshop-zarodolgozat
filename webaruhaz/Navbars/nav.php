@@ -44,7 +44,7 @@ if(isset($_SESSION['email'])){
 <div class="row ">   
     <div class="navbar-collapse collapse" id="menuid">
 <div class="mtNav m-auto d-flex justify-content-center">
-        <div class="col mtLogo"> <a href="index.php?page=home.php" class="navbar-brand bg"><img id="logo" class="border rounded-circle" src="logo/logo.png" alt=""></a></div>
+        <div class="col mtLogo"> <a href="index.php?page=home.php" class="navbar-brand bg"><img id="logo" class="border rounded-circle" src="Images/teszt.gif" alt=""></a></div>
             <div class="col mtMenu">
                 <div clas="row">
                     <div class="col mtMenuButtons">

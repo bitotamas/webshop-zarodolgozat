@@ -131,7 +131,7 @@ if(isset($_POST['button'])){
         </div>
     </div>
     <div class="row justify-content-center">
-            <div class="col-8">
+            <div class="col-4">
                     <form method="post">
                         <h2>Az Ön adatai</h2>
                         <div class="form-group">
@@ -146,8 +146,8 @@ if(isset($_POST['button'])){
                     
                         <h2>Szállítási adatok</h2>
                         <div class="form-group">
-                            <input class="form-control" type="number" name="isz" id="" placeholder="Irányító szám" value="" required>
-                            <input class="form-control" type="text" name="city" id="" placeholder="Város" value="" required>
+                            <input class="form-control mt-1" type="number" name="isz" id="" placeholder="Irányító szám" value="" required>
+                            <input class="form-control mt-1" type="text" name="city" id="" placeholder="Város" value="" required>
                             <input class="form-control" type="text" name="street" id="" placeholder="Utca" value="" required>
                             <input class="form-control" type="number" name="streetNumber" id="" placeholder="Házszám" value="" required>
                         </div>

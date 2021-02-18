@@ -28,6 +28,7 @@ $talalatokSzama=$stmt->rowCount();
 //echo $nr;
 $divProducts="";
 $hozzaad="";
+$raktaron="";
 if($nr>0){
 while($row=$stmt->fetch()){
     extract($row);
@@ -57,6 +58,13 @@ if($quantity==0){
 }else{
     $hozzaad="<a href='index.php?page=Cartfiles/cart.php&id={$id}' class='btn btn-success'>Add to cart</a>";
 }
+if($quantity>5){
+    $raktaron="<h6 class='text-success'>Szállításra kész > 5 db</h6>";
+}else if($quantity<=5 && $quantity>0){
+    $raktaron="<h6 class='text-success'>Szállításra kész {$quantity} db</h6>";
+}else{
+    $raktaron="";
+}
     $divProducts.="
     <div class='col-12 col-sm-12 col-md-6 col-lg-3 mb-3'>
         <div class='card h-100 justify-content-center text-center productBorder'>
@@ -67,6 +75,10 @@ if($quantity==0){
                 <h4 class='card-title'>{$name}</h4>
                 <hr>
                 
+                
+            </div>
+            <div class='card'>
+                {$raktaron}
             </div>
             <div class='card'>
                 <h5 class='card-title'>Listaár: {$price} Ft</h5>
