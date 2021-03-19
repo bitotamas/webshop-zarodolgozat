@@ -9,7 +9,7 @@ if(isset($_SESSION['email'])){
         <a href='index.php?page=LogReg/logout.php' class='nav-link bg-info text-white rounded m-1 text-center'>Kijelentkezés</a>
     </li>
     <li>
-        <a href='index.php?page=LogReg/profile.php' class='nav-link bg-info text-white rounded m-1 text-center'>Profil: {$_SESSION['name']}</a>
+        <a href='index.php?page=LogReg/profileMenu.php' class='nav-link bg-info text-white rounded m-1 text-center'>Profil: {$_SESSION['name']}</a>
     </li>
 
     ";
