@@ -99,24 +99,14 @@ if(isset($_SESSION['cart_contents'])){
             </div>
             <div class='card-body' id="table">
                     <!-- PRODUCT -->
-                    <?=$strCart?>
+                    <?=$strCart!=""?$strCart:"<h1>Jelenleg üres a kosár</h1>"?>
                     <!-- END PRODUCT -->
             </div>
-            <div class='card-footer'>
-                <div class='coupon col-md-5 col-sm-5 no-padding-left pull-left'>
-                    <div class='row'>
-                        <div class='col-6'>
-                            <input type='text' class='form-control' placeholder='Kupon'>
-                        </div>
-                        <div class='col-6'>
-                            <input type='submit' class='btn btn-info' value='Bevált'>
-                        </div>
-                    </div>
-                </div>
+            
                 <div class='pull-right' style='margin: 10px'>
                     <a href='index.php?page=Cartfiles/checkout.php' class='btn btn-success pull-right'>Tovább a rendeléshez</a>
                     <div class='pull-right' style='margin: 5px'>
-                        Total price: <b><?=$sum==0? "" :$sum?> Ft</b>
+                        Total price: <b><?=$sum==0? "0" :$sum?> Ft</b>
                     </div>
                 </div>
             </div>
