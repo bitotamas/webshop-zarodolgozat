@@ -9,7 +9,7 @@ class Product{
     public $name;
     public $price;
     public $picture;
-    public $description;
+    public $quantity;
     
 
     public function __construct($db){
