@@ -1,7 +1,7 @@
 
 /*---------*INDEX---------*/
 body{
-    background-image: url("../Background/bg.gif");
+    background-image: url("../Background/bg.jpg");
    
 }
 /*-------------------------*/
@@ -92,10 +92,15 @@ ul>li{
     font-weight: bolder;
     width: 340px;
 }
+#asd{
+    width: 50%;
+}
 @media screen and (min-width:1200px){
  .wrapper{
-     margin-top: 138px;
+     margin-top: 186px;
+
 }
+
 /*A navbar összes tartalma*/
 
 .mtNav{
@@ -128,6 +133,15 @@ ul>li{
 .mtUser{
     display: flex;
     justify-content: center;
+    
+}
+/*Kereső felület*/
+.mtSearch{
+    display: flex;
+    justify-content: center;
+}
+#searchInput{
+    width: 40%;
 }
 /*Kosár*/
 .mtCart{

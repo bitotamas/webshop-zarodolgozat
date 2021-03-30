@@ -76,6 +76,12 @@ if(isset($_SESSION['email'])){
                                 <?=$logReg?>
                             </ul>
                     </div>
+                    <div class="col">
+                            <ul class="navbar-nav mr-auto mtSearch">
+                                <input type="search" name="searchingWord" id="searchInput" class="mr-1 rounded" value="">
+                                <a href="index.php?categ=search" id="searching"   class="nav-link bg-danger text-dark text-center m-1 rounded">Keresés</a>
+                            </ul>
+                    </div>
                 </div>
             </div>
         <div class="col mtCart"><a href="index.php?page=Cartfiles/cart.php" class="nav-link rounded"><img id="cart" class="bordered rounded-circle" src="images/shopping-cart.png" alt=""></a></div>      
@@ -86,3 +92,4 @@ if(isset($_SESSION['email'])){
 </nav>               
 
 <link rel="stylesheet" href="Style/style.css">
+<script src="Navbars/search.js"></script>

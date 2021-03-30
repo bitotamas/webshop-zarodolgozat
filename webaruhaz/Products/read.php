@@ -6,7 +6,10 @@ include "Products/product.class.php";
 $hTag="";
 $talalatokSzama="";
 $product=new Product($db);
-if(isset($_GET['categ'])){
+if(isset($_GET['keyword'])){
+    $stmt=$product->search($_GET['keyword']);
+    $hTag='<h1>Keresés: "'.$_GET['keyword'].'" kulcsszóval</h1>';
+}else if(isset($_GET['categ'])){
     if($_GET['categ']=="cpu"){
         $hTag="<h1>Processzorok</h1>";
         }else if($_GET['categ']=="gpu"){
@@ -18,10 +21,12 @@ if(isset($_GET['categ'])){
                     }else if($_GET['categ']=="psu"){
                         $hTag="<h1>Tápegységek</h1>";
                         }
-    $stmt=$product->filteredRead($_GET['categ']);
+                        
 
-}else {
-$stmt=$product->readRandom();
+    $stmt=$product->filteredRead($_GET['categ']);
+    
+}else{
+   $stmt=$product->readRandom(); 
 }
 $nr=$stmt->rowCount();
 $talalatokSzama=$stmt->rowCount();
@@ -30,6 +35,7 @@ $divProducts="";
 $hozzaad="";
 $raktaron="";
 if($nr>0){
+
 while($row=$stmt->fetch()){
     extract($row);
     //$strTable.="<tr><td>{$name}</td><td><img src='images/{$picture}'></td><td>{$price}</td><td><a href='index.php?page=cart.php&id={$id}'>Add to cart</a></td></tr>";
@@ -56,7 +62,7 @@ while($row=$stmt->fetch()){
 if($quantity==0){
     $hozzaad="<span class='bg-warning'>Nincs raktáron</span>";
 }else{
-    $hozzaad="<a href='index.php?page=Cartfiles/cart.php&id={$id}' class='btn btn-success'>Add to cart</a>";
+    $hozzaad="<a href='index.php?page=Cartfiles/cart.php&id={$id}' class='btn btn-success'>Kosárba</a>";
 }
 if($quantity>5){
     $raktaron="<h6 class='text-success'>Szállításra kész > 5 db</h6>";

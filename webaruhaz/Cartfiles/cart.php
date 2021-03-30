@@ -106,7 +106,7 @@ if(isset($_SESSION['cart_contents'])){
                 <div class='pull-right' style='margin: 10px'>
                     <a href='index.php?page=Cartfiles/checkout.php' class='btn btn-success pull-right'>Tovább a rendeléshez</a>
                     <div class='pull-right' style='margin: 5px'>
-                        Total price: <b><?=$sum==0? "0" :$sum?> Ft</b>
+                        Teljes összeg: <b><?=$sum==0? "0" :$sum?> Ft</b>
                     </div>
                 </div>
             </div>
