@@ -5,9 +5,7 @@ body{
    
 }
 /*-------------------------*/
-#infoBorder{
-    border: 5px solid rgb(10, 130, 134);
-}
+
 /*---------*CART---------*/
 #cartImg{
     width: 100%;
@@ -15,6 +13,9 @@ body{
 }
 .cartBorder{
     border: solid 3px red;
+}
+#infoBorder{
+    border: 5px solid rgb(10, 130, 134);
 }
 /*-------------------------*/
 

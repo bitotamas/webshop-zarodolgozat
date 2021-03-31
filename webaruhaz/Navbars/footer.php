@@ -5,7 +5,7 @@
             <small>
                 MagmaTech Számítéstechnikai Webáruház | 6000 Kecskemét Valamilyen utca 69.<br> 
                 Telefon: +36 55 555-5555 <br> 
-                Email: emailkuldesteszt@gmail.com
+                Email: mtwebaruhaz@gmail.com
 			</small>
         </div>
 </footer>
