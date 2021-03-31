@@ -5,8 +5,9 @@ body{
    
 }
 /*-------------------------*/
-
-
+#infoBorder{
+    border: 5px solid rgb(10, 130, 134);
+}
 /*---------*CART---------*/
 #cartImg{
     width: 100%;

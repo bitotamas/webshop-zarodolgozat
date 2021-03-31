@@ -1,8 +1,7 @@
 <?php
 
-
-
 include "Products/product.class.php";
+
 $hTag="";
 $talalatokSzama="";
 $product=new Product($db);
@@ -28,49 +27,26 @@ if(isset($_GET['keyword'])){
 }else{
    $stmt=$product->readRandom(); 
 }
-$nr=$stmt->rowCount();
-$talalatokSzama=$stmt->rowCount();
-//echo $nr;
-$divProducts="";
-$hozzaad="";
-$raktaron="";
-if($nr>0){
-
-while($row=$stmt->fetch()){
-    extract($row);
-    //$strTable.="<tr><td>{$name}</td><td><img src='images/{$picture}'></td><td>{$price}</td><td><a href='index.php?page=cart.php&id={$id}'>Add to cart</a></td></tr>";
-    /*$divProducts.="
-    <div class='border border-danger rounded'>
-
-    <div class='row justify-content-center m-4'>
-        <h3>{$name}</h3>
-    </div>
-    
-    <div class='row justify-content-center m-4'>
-        <img src='images/{$picture}'>
-    </div>
-
-    <div class='row justify-content-center m-4'>
-        <h4>Listaár: {$price} Ft</h4>
-    </div>
-    
-    <div class='row justify-content-center m-4'>
-        <a href='index.php?page=cart.php&id={$id}' class='btn btn-success'>Add to cart</a>
-    </div>
-
-    </div>";*/
-if($quantity==0){
-    $hozzaad="<span class='bg-warning'>Nincs raktáron</span>";
-}else{
-    $hozzaad="<a href='index.php?page=Cartfiles/cart.php&id={$id}' class='btn btn-success'>Kosárba</a>";
-}
-if($quantity>5){
-    $raktaron="<h6 class='text-success'>Szállításra kész > 5 db</h6>";
-}else if($quantity<=5 && $quantity>0){
-    $raktaron="<h6 class='text-success'>Szállításra kész {$quantity} db</h6>";
-}else{
+    $nr=$stmt->rowCount();
+    $talalatokSzama=$stmt->rowCount();
+    $divProducts="";
+    $hozzaad="";
     $raktaron="";
-}
+if($nr>0){
+    while($row=$stmt->fetch()){
+        extract($row);
+    if($quantity==0){
+        $hozzaad="<span class='bg-warning'>Nincs raktáron</span>";
+    }else{
+        $hozzaad="<a href='index.php?page=Cartfiles/cart.php&id={$id}' class='btn btn-success'>Kosárba</a>";
+    }
+    if($quantity>5){
+        $raktaron="<h6 class='text-success'>Szállításra kész > 5 db</h6>";
+    }else if($quantity<=5 && $quantity>0){
+        $raktaron="<h6 class='text-success'>Szállításra kész {$quantity} db</h6>";
+    }else{
+        $raktaron="";
+    }
     $divProducts.="
     <div class='col-12 col-sm-12 col-md-6 col-lg-3 mb-3'>
         <div class='card h-100 justify-content-center text-center productBorder'>
@@ -98,5 +74,4 @@ if($quantity>5){
 }
 }
 ?>
-<link rel="stylesheet" href="Style/style.css">
 

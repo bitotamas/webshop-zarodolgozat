@@ -2,7 +2,6 @@
 
 $dir = realpath(__DIR__."/phpMailer/");
 
-echo "dir:".$dir;
 
 use PHPMailer\PHPMailer\PHPMailer;
 

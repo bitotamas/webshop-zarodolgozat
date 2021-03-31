@@ -1,7 +1,5 @@
-<?php
-include_once "Products/read.php";
+<?php include_once "Products/read.php"; ?>
 
-?>
 <div class="mt-4"></div>
 <div class="container justify-content-center text-center ">
         
@@ -17,4 +15,3 @@ include_once "Products/read.php";
         </div>
         
 </div>
-<link rel="stylesheet" href="Style/style.css">

@@ -30,10 +30,11 @@ while($row=$stmt->fetch()){
 ?>
 <div class='container'>
     <div class="row justify-content-center">
-        <div class="text-center bg-info col-12"><h1>Az ön rendelései</h1></div>
-                <div class='card shopping-cart'>
-                    <div class='card-body border'>   
-                        <?=$orders?>      
+        
+                <div class='card shopping-cart col-12 bg-info'>
+                <div class="text-center bg-info col-12"><h1>Az ön rendelései</h1></div>
+                    <div class='card-body bg-white'>   
+                        <?=$orders!=""?$orders:"<h3 class='text-center'>Önnek jelenleg egy rendelése sincsen.</h3>"?>      
                     </div>
                     <div class="row">
                         <div class="col-6 text-center"><a href="index.php?page=LogReg/profileMenu.php" class="btn btn-warning">Vissza a profilmenübe</a></div>

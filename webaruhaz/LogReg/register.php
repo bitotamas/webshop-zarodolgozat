@@ -1,6 +1,5 @@
 ﻿<?php
 $nev=$msg=$email=$fnev="";  
-//print_r($_POST);
 if(isset($_POST['mentes'])){
 	extract($_POST);
 	//ellenőrizzük hogy ne legyen ilyen email es felhasznalonev mar az adatbázisban:

@@ -57,21 +57,26 @@ if(isset($_SESSION['cart_contents'])){
 
 if(isset($_POST['button'])){
     extract($_POST);
-        $address=$_POST["isz"]." ".$_POST["city"]." ".$_POST["street"]." ".$_POST["streetNumber"].".";
+        
+        $postcode=$_POST["isz"];
+        $city=$_POST["city"];
+        $street=$_POST["street"];
+        $housenumber=$_POST["streetNumber"];
+
+        $fulladdress=$postcode." ".$city." ".$street." ".$housenumber;
+
         $customer_id=$_SESSION['id'];
         $date=date("Y-m-d");
-        $sql="INSERT into orders values(null,{$customer_id},{$sum},'{$date}','{$address}')";
+        $sql="INSERT into orders values(null,{$customer_id},{$sum},'{$date}','{$postcode}','{$city}','{$street}','{$housenumber}')";
         $stmt=$db->exec($sql);
 
         if($stmt){
-            echo "sikeres az orders táblába írás";
-
 
             $cartDetailsEmail.="
                 <h1>Megrendelő adatai</h1>
                 <p>Név: {$getName}</p>
                 <p>Telefon: {$getPhone}</p>
-                <p>Cím: {$address}</p>
+                <p>Cím: {$fulladdress}</p>
                 <h1>Rendelés termékei</h1>";
 
 
@@ -115,20 +120,23 @@ if(isset($_POST['button'])){
 ?>
 
 <div class='container'>
-    <div class="row justify-content-center">
-        <div class="text-center bg-info col-12"><h1>Kosár adatai</h1></div>
-                <div class='card shopping-cart'>
-                    <div class='card-body border'>   
+    <div class="row justify-content-center "> 
+                <div class='card shopping-cart bg-info'>
+                    <div class='card-body  '>
+                        <h1 class="text-center">Kosár adatai</h1>
+                    </div> 
+                    <div class='card-body bg-white'>   
                         <?=$cartDetails?>      
                     </div>
-                    <div class='card-body text-center bg-info'>
+                    <div class='card-body text-center'>
                         <h6><strong>Végösszeg: <?=$sum?> Ft</strong></h6>
                     </div>
                 </div>
         </div>
     </div>
+    <div class="mt-1"></div>
     <div class="row justify-content-center">
-            <div class="col-4">
+            <div class="col-4 bg-white" id="infoBorder">
                     <form method="post">
                         <h2>Az Ön adatai</h2>
                         <div class="form-group">
@@ -154,5 +162,4 @@ if(isset($_POST['button'])){
                     </form>
             </div>
     </div>
-</div>
-<link rel="stylesheet" href="Style/style.css">    
+</div>   

@@ -6,15 +6,14 @@ if(isset($_POST['be'])){
     $sql="select id,name,password,permission from customers where email='{$email}'";
     $stmt=$db->query($sql);
     echo $stmt->rowCount();
-    if(  $stmt->rowCount()>0){//létezik a felhasználó
+    if(  $stmt->rowCount()>0){
         $row=$stmt->fetch(); 
         if(password_verify($password,$row['password'])){
             $_SESSION['email'] = $email;
             $_SESSION['permission']=$row['permission'];
             $_SESSION['name']=$row['name'];
             $_SESSION['id']=$row['id'];
-            //echo "ok";
-            header('Location: index.php?page=./home.php');
+            header('Location: index.php?page=home.php');
         }else
             $msg="<div class='text-danger'>Helytelen email cím és jelszó páros !</div>";
         
@@ -33,10 +32,6 @@ if(isset($_POST['be'])){
             <input type="text" name="email" class="form-control" placeholder="E-mail" required="required" value="">
         </div>
 		
-		<!--disable autocomplete input text in login form
-		<input type="text" style="display:none">
-		<input type="password" style="display:none">-->
-		
         <div class="form-group">
             <input type="password" name="password" class="form-control" placeholder="jelszó" required="required">
         </div>
@@ -50,4 +45,4 @@ if(isset($_POST['be'])){
     
 </div>
 </div>
-<link rel="stylesheet" href="Style/style.css">                                		                            
+                              		                            

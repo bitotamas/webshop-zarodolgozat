@@ -114,4 +114,3 @@ if(isset($_SESSION['cart_contents'])){
 </div>
 <div class="m-5"></div>
 <script src="Cartfiles/cartt.js"></script>
-<link rel="stylesheet" href="Style/style.css">

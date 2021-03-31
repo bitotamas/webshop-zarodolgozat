@@ -1,6 +1,6 @@
 <?php
 $id=$_GET['order_id'];
-$orderinfo="SELECT orders.id,orders.total,orders.status,customers.name,customers.email,customers.phone,orders.address from orders inner join customers on customers.id=orders.customer_id where orders.id={$id}";
+$orderinfo="SELECT orders.id,orders.total,orders.status,customers.name,customers.email,customers.phone,orders.postcode,orders.city,orders.street,orders.housenumber from orders inner join customers on customers.id=orders.customer_id where orders.id={$id}";
 $stmt=$db->query($orderinfo);
 $row=$stmt->fetch();
 extract($row);
@@ -40,18 +40,19 @@ while($row=$stmt->fetch()){
 ?>
     
     <div class='container'>
-    <div class="text-center bg-info"><h1>Rendelés adatai</h1></div>
-            <div class='card shopping-cart'>
-                <div class='card-body text-center'>
+    
+            <div class='card shopping-cart bg-info'>
+                <div class="text-center "><h1>Rendelés adatai</h1></div>
+                <div class='card-body text-center bg-white'>
                     <div>Vásárlói azonosító: <?=$id?></div>
                     <div>Rendelés időpontja: <?=$status?></div>
                     <div>Vevő neve: <?=$rendelo?></div>
                     <div>Email címe: <?=$email?></div>
                     <div>Telefonszáma: <?=$phone?></div>
-                    <div>Szállítási cím: <?=$address?></div>
+                    <div>Szállítási cím: <?=$postcode." ".$city." ".$street." ".$housenumber?></div>
                 </div>
-                <div class="text-center bg-info"><h1>Termékek adatai</h1></div>
-                <div class='card-body'>   
+                <div class="text-center"><h1>Termékek adatai</h1></div>
+                <div class='card-body bg-white'>   
                     <?=$ordersStr?>    
                 </div>
                 <div class='card-body text-center'>
@@ -63,7 +64,6 @@ while($row=$stmt->fetch()){
         </div>
         
     </div>
-    <link rel="stylesheet" href="Style/style.css">
             
    
 

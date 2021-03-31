@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_POST['mentes'])){
 
     extract($_POST);
@@ -7,9 +8,12 @@ if(isset($_POST['mentes'])){
 	$sql="UPDATE customers SET password='{$pw}' where id={$_SESSION['id']}";
 	$stmt=$db->exec($sql);
 	if($stmt){
-				$_SESSION["pwUpdate"]="Sikeresen megváltoztatta a jelszavát!!";
 				header("Location:index.php?page=LogReg/pwchange.php");
+              
 			}
+
+    
+    
 }
 ?>
 <div class="row justify-content-center">
@@ -17,7 +21,7 @@ if(isset($_POST['mentes'])){
         <form method="post">
                 <h2 class="text-center"><b><i>Jelszó módosítás</i></b></h2>
             <div class="form-group">
-                <input type="password" class="form-control" name="password" id="Jelszó" placeholder="Új jelszó" required >
+                <input type="password" class="form-control" name="password" id="jelszo" placeholder="Új jelszó" required >
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" name="conf_password" id="conf_jelszo" placeholder="Új jelszó újra" required>
@@ -33,7 +37,9 @@ if(isset($_POST['mentes'])){
                 <div class="col-6 text-center"><a href="index.php?page=home.php" class="btn btn-danger">Vissza a főoldalra</a></div>
             </div>
             <div class="row">
-                <?=isset($_SESSION['pwUpdate'])?$_SESSION['pwUpdate']:""?>
+                <p id="msg"></p>
+                <p><?=isset($_SESSION['pwUpdate'])?$_SESSION['pwUpdate']:""?></p>
+
             </div> 
         
     </div>

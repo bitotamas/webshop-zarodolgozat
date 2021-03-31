@@ -15,13 +15,7 @@ class Product{
     public function __construct($db){
         $this->conn=$db;
     }
-/*
-    function read(){
-    $sql="SELECT * from {$this->table_name} order by name";
-    $stmt=$this->conn->query($sql);
-    return $stmt;
-    }
-*/
+
     function readRandom(){
         $sql="SELECT * from {$this->table_name} where quantity!=0 ORDER BY RAND() LIMIT 8";
         $stmt=$this->conn->query($sql);
@@ -36,7 +30,6 @@ class Product{
         $sql="SELECT * from {$this->table_name} where name like '{$wordkey}' or name like '%{$wordkey}' or name like '{$wordkey}%' or name like '%{$wordkey}%' order by quantity desc,name";
         $stmt=$this->conn->query($sql);
         return $stmt;
-    }
-    
+    }  
 }
 ?>

@@ -2,8 +2,6 @@
 session_start();
 include_once "../Database/config.php";
 include_once "cart.class.php";
-echo "ok";
-print_r($_GET);
 
 
 $cart=new Cart();

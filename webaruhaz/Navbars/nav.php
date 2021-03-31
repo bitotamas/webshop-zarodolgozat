@@ -90,6 +90,4 @@ if(isset($_SESSION['email'])){
     </div>
 </div>          
 </nav>               
-
-<link rel="stylesheet" href="Style/style.css">
 <script src="Navbars/search.js"></script>

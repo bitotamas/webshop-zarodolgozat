@@ -9,4 +9,3 @@
 			</small>
         </div>
 </footer>
-<link rel="stylesheet" href="Style/style.css">
