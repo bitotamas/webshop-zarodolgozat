@@ -9,7 +9,6 @@ $cart=new Cart();
 
 $sum=0;
 $strCart="";
-//print_r($_GET);
 /////////////////////////////////////
 if(isset($_GET['id'])){
 
@@ -34,9 +33,6 @@ if(isset($_SESSION['cart_contents'])){
         
         $total=intval($quantity*$price);
         $sum+=$total;
-        /*
-        $strCart.="<tr><td>{$name}</td><td><input type='number' value='{$quantity}' id='{$id}' min='1'></td><td>{$price}</td><td>{$total}</td><td><a href='index.php?page=delete.php&id={$id}'>Remove</a></td></tr>";
-        */
         $strCart.="
         <div class='row'>
         <div class='col-12 col-sm-12 col-md-2 text-center'>
@@ -44,9 +40,6 @@ if(isset($_SESSION['cart_contents'])){
         </div>
         <div class='col-12 text-sm-center col-sm-12 text-md-left col-md-6'>
             <h4 class='product-name'><strong>{$name}</strong></h4>
-            <h4>
-                <small>Product description</small>
-            </h4>
         </div>
         <div class='col-12 col-sm-12 text-sm-center col-md-4 text-md-right row'>
             <div class='col-3 col-sm-3 col-md-6 text-md-right' style='padding-top: 5px'>
@@ -68,26 +61,6 @@ if(isset($_SESSION['cart_contents'])){
 
 
 ?>
-<!--
-<div class="container-fluid text-center items">
-    <div class="jumbotron m-5">
-        <table>
-        <thead>
-        <th>Item name</th><th>Quantity</th><th>Price</th><th>Total</th><th>Action</th>
-        </thead>
-        <tbody id="table">
-            <?=$strCart?>
-        </tbody>
-        <tfoot><tr>
-            <td colspan="3">Sum</td>
-            <td><?=$sum==0? "" :$sum?></td>
-        </tr></tfoot>
-        </table>
-    </div>
-    <div><a href="index.php?page=home.php">continue shopping...</a><a href="index.php?page=checkout.php">Checkout</a></div>
-    
-</div>
--->
 
 <div class='container'>
    <div class='card shopping-cart cartBorder'>
@@ -104,7 +77,8 @@ if(isset($_SESSION['cart_contents'])){
             </div>
             
                 <div class='pull-right' style='margin: 10px'>
-                    <a href='index.php?page=Cartfiles/checkout.php' class='btn btn-success pull-right'>Tovább a rendeléshez</a>
+                <?=$strCart!=""?"<a href='index.php?page=Cartfiles/checkout.php' class='btn btn-success pull-right'>Tovább a rendeléshez</a>":"<a href='index.php?page=home.php' class='btn btn-outline-success pull-right'>Vissza a főoldalra</a>"?>
+                    
                     <div class='pull-right' style='margin: 5px'>
                         Teljes összeg: <b><?=$sum==0? "0" :$sum?> Ft</b>
                     </div>

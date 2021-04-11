@@ -27,7 +27,11 @@ class Product{
         return $stmt;
     }
     function search($wordkey){
-        $sql="SELECT * from {$this->table_name} where name like '{$wordkey}' or name like '%{$wordkey}' or name like '{$wordkey}%' or name like '%{$wordkey}%' order by quantity desc,name";
+        $sql="SELECT * from {$this->table_name} 
+        where name like '{$wordkey}'
+           or name like '%{$wordkey}' or name like '{$wordkey}%'
+           or name like '%{$wordkey}%' 
+        order by quantity desc,name";
         $stmt=$this->conn->query($sql);
         return $stmt;
     }  

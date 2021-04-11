@@ -157,7 +157,7 @@ if(isset($_POST['button'])){
                             <input class="form-control" type="number" name="streetNumber" id="" placeholder="Házszám" value="" required>
                         </div>
                         <div class="form-group">
-                            <input class="form-group btn btn-success btn btn-block" type="submit" name="button" id="" value="Place order">
+                            <input class="form-group btn btn-success btn btn-block" type="submit" name="button" id="" value="Rendelés megtétele">
                         </div>
                     </form>
             </div>

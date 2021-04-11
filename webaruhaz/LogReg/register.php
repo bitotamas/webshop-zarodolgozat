@@ -48,7 +48,7 @@ if(isset($_POST['mentes'])){
 		<input type="password" style="display:none">
 		
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" id="Jelszó" placeholder="jelszó" required >
+            <input type="password" class="form-control" name="password" id="Jelszó" placeholder="Jelszó" required >
         </div>
 		<div class="form-group">
             <input type="password" class="form-control" name="conf_password" id="conf_jelszo" placeholder="Jelszó újra" required>

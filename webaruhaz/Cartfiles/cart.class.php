@@ -20,12 +20,8 @@ class Cart{
         }
         $item['quantity']+=$old_qty;
         $this->cart_contents[]=$item;
-        
-
         $_SESSION['cart_contents']=$this->cart_contents;
-
         return TRUE;
-
     }
 
     public function remove($id){
@@ -39,12 +35,10 @@ class Cart{
         return TRUE;
     }
 
-    public function updateQty($id,$qty){
-            echo "updateqty-be vagyunk";
+    public function updateQty($id,$qty){    
         foreach($this->cart_contents as $key=>&$arr){
             if($arr['id']==intval($id)){
-                $arr['quantity']=intval($qty);
-               
+                $arr['quantity']=intval($qty); 
             }
         }
         $_SESSION['cart_contents']=$this->cart_contents;

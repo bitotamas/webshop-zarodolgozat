@@ -21,6 +21,11 @@ while($row=$stmt->fetch()){
                 <h6><strong>Darabszám: {$qty} db</strong></h6>
             </div>
         </div>
+        <div class='col-3 col-sm-3 col-md-7 text-md-right'>
+            <div class='status'>
+                <h6><strong>Rendelés dátuma: {$status}</strong></h6>
+            </div>
+        </div>
     </div> 
            
 </div>

@@ -49,15 +49,11 @@ if($nr>0){
     }
     $divProducts.="
     <div class='col-12 col-sm-12 col-md-6 col-lg-3 mb-3'>
-        <div class='card h-100 justify-content-center text-center productBorder'>
-            
+        <div class='card h-100 justify-content-center text-center productBorder'>  
                 <img id='cartImg' src='Images/{$picture}' class='card-img-top mt-5'>
-            
             <div class='card-body border'>
                 <h4 class='card-title'>{$name}</h4>
-                <hr>
-                
-                
+                <hr>    
             </div>
             <div class='card'>
                 {$raktaron}

@@ -45,7 +45,7 @@ if(isset($_POST['add']) && $_POST['categories']!="0"){
 }
 
 ?>
-<div class="container adminBorder bg-white">
+<div class=" adminBorder bg-white">
         <h1 class="text-center">Termékek</h1>
         <div class="row m-1 p-2">   
             <div class="col-5">
@@ -85,7 +85,7 @@ if(isset($_POST['add']) && $_POST['categories']!="0"){
                     <!--Message-->
                 </form>
             </div>
-            <div class="col-5">
+            <div class="col-3">
                 <table class="table table-bordered table-striped"><thead><th>Azonosító</th><th>Kategória</th><th>Név</th><th>Ár</th><th>Kép</th><th>Darabszám</th></thead>
                         <?=$tbl?>
                 </table>
