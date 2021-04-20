@@ -60,7 +60,7 @@ if(isset($_POST['mentes'])){
 		<div>
 		</div>
         <div class="form-group">
-			<label class="checkbox-inline"><input type="checkbox" required> Elfogadom az <a href="#">adatkezelési feltételeket</a></label>
+			<label class="checkbox-inline"><input type="checkbox" required> <div id="dmc"> Elfogadom az adatkezelési feltételeket<span id="dmctext">Ön elfogadja, hogy a weboldal, adatait felhasználva hajtson végre automatikus kitöltést a weboldalon.</span></div></label>
 		</div>
 		
 		<div class="form-group">
