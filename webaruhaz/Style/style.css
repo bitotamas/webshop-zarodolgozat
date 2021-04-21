@@ -2,7 +2,7 @@
 /*---------*INDEX---------*/
 body{
     background-image: url("../Background/bg.jpg");
-   
+    
 }
 /*-------------------------*/
 
@@ -25,7 +25,8 @@ body{
     border-top: solid 2px red; 
 }
 .footerer,.push{
-    height: 150px;
+   height: 150px; 
+   bottom: 0;
 }
 /*-------------------------*/
 
@@ -86,6 +87,7 @@ body{
     margin-top: 78px;
     min-height: 100%;
     margin-bottom: -150px;
+
 }
 /*-----------------------------------------*/
 
@@ -121,11 +123,10 @@ ul>li{
 @media screen and (min-width:1200px){
  .wrapper{
      margin-top: 186px;
+     min-height: 69.15vh;
 
 }
-
 /*A navbar összes tartalma*/
-
 .mtNav{
     display: flex;
     justify-content: center;

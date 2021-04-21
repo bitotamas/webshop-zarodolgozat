@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2021. Ápr 07. 11:51
+-- Létrehozás ideje: 2021. Ápr 20. 18:47
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `magmatech`
 --
-CREATE DATABASE IF NOT EXISTS `magmatech` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
-USE `magmatech`;
 
 -- --------------------------------------------------------
 
@@ -46,7 +44,7 @@ CREATE TABLE `customers` (
 INSERT INTO `customers` (`id`, `permission`, `name`, `password`, `email`, `phone`) VALUES
 (1, 1, 'admin', '$2y$10$PsJmTDELFM5qphw0D5t1kuuKHw7X1f/aPXRSXFmRG6MrjJ4GZ2RI.', 'mtwebaruhaz@gmail.com', '0620696969'),
 (25, 0, 'Mari Ilona', '$2y$10$6SVy/ouTxB1FOdTiw.sEH.bXA/CfGl2SiJQ.agS7L00.MPJb9uvzi', 'ilona.mari01@gmail.com', '06209515452'),
-(26, 0, 'Bitó Tamás', '$2y$10$srQGnuw3VK0isQMyZrht1Ofv8U6Uc.kBgdfRWXb5STLHtBzj9Gx7i', 'bito.tamas51@gmail.com', '6209622341'),
+(26, 0, 'Bitó Tamás', '$2y$10$srQGnuw3VK0isQMyZrht1Ofv8U6Uc.kBgdfRWXb5STLHtBzj9Gx7i', 'bito.tamas51@gmail.com', '62069696969'),
 (27, 0, 'teszter', '$2y$10$9/exMNrNIimtupVBe47BHOikptPcXy5cy1bLoTls4C2zqba0XaaKC', 'igen@igen.igen', '0620961121451');
 
 -- --------------------------------------------------------
@@ -71,7 +69,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `total`, `status`, `postcode`, `city`, `street`, `housenumber`) VALUES
-(36, 26, 280000, '2021-03-31', 6000, 'Kecskemét', 'Bogovics köz', 15);
+(36, 26, 280000, '2021-03-31', 6000, 'Kecskemét', 'Bogovics köz', 15),
+(37, 26, 72000, '2021-04-11', 6000, 'Kecskemét', 'Igen', 69),
+(38, 26, 200000, '2021-04-12', 1234, 'asd', 'asd', 12);
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,7 @@ CREATE TABLE `order_items` (
   `id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `quantity` int(5) NOT NULL
+  `quantity` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -91,7 +91,9 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`) VALUES
-(55, 36, 20, 1);
+(55, 36, 20, 1),
+(56, 37, 73, 1),
+(57, 38, 16, 1);
 
 -- --------------------------------------------------------
 
@@ -121,7 +123,7 @@ INSERT INTO `products` (`id`, `category`, `name`, `price`, `picture`, `quantity`
 (13, 'gpu', 'GIGABYTE GeForce RTX 2060', 130000, 'rtx2060.jpg', 9),
 (14, 'gpu', 'GIGABYTE GeForce RTX 2060 SUPER', 150000, 'rtx2060super.jpg', 0),
 (15, 'gpu', 'GIGABYTE GeForce RTX 2070', 170000, 'rtx2070.jpg', 0),
-(16, 'gpu', 'GIGABYTE GeForce RTX 2070 SUPER', 200000, 'rtx2070super.jpg', 10),
+(16, 'gpu', 'GIGABYTE GeForce RTX 2070 SUPER', 200000, 'rtx2070super.jpg', 9),
 (17, 'gpu', 'GIGABYTE GeForce RTX 2080', 230000, 'rtx2080.jpg', 8),
 (18, 'gpu', 'GIGABYTE GeForce RTX 2080 SUPER', 250000, 'rtx2080super.jpg', 9),
 (19, 'gpu', 'GIGABYTE GeForce RTX 2080 Ti', 341000, 'rtx2080ti.jpg', 10),
@@ -178,7 +180,7 @@ INSERT INTO `products` (`id`, `category`, `name`, `price`, `picture`, `quantity`
 (70, 'cpu', 'AMD Ryzen 7 2700', 70000, 'ryzen-7-2700.jpg', 10),
 (71, 'cpu', 'AMD Ryzen 7 2700X', 75000, 'ryzen-7-2700x.jpg', 10),
 (72, 'cpu', 'AMD Ryzen 3 3100', 70000, 'ryzen-3-3100.jpg', 0),
-(73, 'cpu', 'AMD Ryzen 3 3300X', 72000, 'ryzen-3-3300x.jpg', 10),
+(73, 'cpu', 'AMD Ryzen 3 3300X', 72000, 'ryzen-3-3300x.jpg', 9),
 (74, 'cpu', 'AMD Ryzen 5 3600', 78000, 'ryzen-5-3600.jpg', 10),
 (75, 'cpu', 'AMD Ryzen 5 3600X', 85000, 'ryzen-5-3600x.jpg', 0),
 (76, 'cpu', 'AMD Ryzen 5 3600XT', 90000, 'ryzen-5-3600xt.jpg', 10),
@@ -296,13 +298,13 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT a táblához `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT a táblához `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT a táblához `products`
