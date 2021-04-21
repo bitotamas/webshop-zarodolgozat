@@ -44,7 +44,7 @@ if(isset($_SESSION['email'])){
 <div class="row ">   
     <div class="navbar-collapse collapse" id="menuid">
 <div class="mtNav m-auto d-flex justify-content-center">
-        <div class="col mtLogo"> <a href="index.php?page=home.php" class="navbar-brand bg"><img id="logo" class="border rounded-circle" src="Logo/logo.png" alt="MagmaTech" title="MagmaTech"></a></div>
+        <div class="col mtLogo"> <a href="index.php?page=home.php" class="navbar-brand bg"><img id="logo" class="border rounded-circle" src="logo/logo.png" alt="MagmaTech" title="MagmaTech"></a></div>
             <div class="col mtMenu">
                 <div clas="row">
                     <div class="col mtMenuButtons">
@@ -84,7 +84,7 @@ if(isset($_SESSION['email'])){
                     </div>
                 </div>
             </div>
-        <div class="col mtCart"><a href="index.php?page=Cartfiles/cart.php" class="nav-link rounded"><img id="cart" class="bordered rounded-circle" src="images/shopping-cart.png" alt=""></a></div>      
+        <div class="col mtCart"><a href="index.php?page=Cartfiles/cart.php" class="nav-link rounded"><img id="cart" class="bordered rounded-circle" src="Images/shopping-cart.png" alt=""></a></div>      
 </div>
     </div>
     </div>
