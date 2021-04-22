@@ -21,7 +21,7 @@ $email=$emailCustomer;//ahová küldeni szeretnénk
 
 $body=$cartDetailsEmail;
 
-$body.= "</p><p><a href=\"localhost/SelfProjects/webaruhaz/index.php"."\">Vissza a webshop oldalára</a><p>";
+$body.= "</p><p><a href=\"http://magmatech.nhely.hu/index.php"."\">Vissza a webshop oldalára</a><p>";
 
 $mail = new PHPMailer(true); // Passing `true` enables exceptions
 

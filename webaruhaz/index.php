@@ -10,7 +10,7 @@ require_once "Database/config.php";
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>MagmaTech Számítástechnikai Webáruház</title>
-<link rel="icon" href="Logo/logo.png">
+<link rel="icon" href="logo/logo.png">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="Style/style.css">
