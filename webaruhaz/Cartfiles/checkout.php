@@ -109,7 +109,7 @@ if(isset($_POST['button'])){
             <p>Végösszeg: {$sum}</p>
             ";
 
-            include "Cartfiles/mailer.php";
+            /*include "Cartfiles/mailer.php";*/
             
             header("Location:index.php?page=Cartfiles/order_success.php&order_id=".$order_id);
             }
